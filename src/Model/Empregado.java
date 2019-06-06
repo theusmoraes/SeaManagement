@@ -1,13 +1,22 @@
 
 package Model;
 
-public class Empregado {
-    private String nome;
-    private String cpf;
-    private String usuario;
-    private String senha;
-    private boolean admin;
-    private String horarioTrabalho;
+public abstract class Empregado {
+    protected String nome;
+    protected String cpf;
+    protected String usuario;
+    protected String senha;
+    protected double salario;
+    protected float horarioTrabalho;
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public float getHorarioTrabalho() {
+        return horarioTrabalho;
+    }
+
     
     public String getNome() {
         return nome;
@@ -25,9 +34,14 @@ public class Empregado {
         return senha;
     }
 
-    public boolean isAdmin() {
-        return admin;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
+
+    public void setHorarioTrabalho(float horarioTrabalho) {
+        this.horarioTrabalho = horarioTrabalho;
+    }
+    
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -45,10 +59,7 @@ public class Empregado {
         this.senha = senha;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
-    
+
         
     
     
