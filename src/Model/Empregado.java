@@ -6,10 +6,10 @@ public abstract class Empregado {
     protected String cpf;
     protected String usuario;
     protected String senha;
-    protected double salario;
+    protected float salario;
     protected float horarioTrabalho;
 
-    public double getSalario() {
+    public float getSalario() {
         return salario;
     }
 
@@ -34,7 +34,7 @@ public abstract class Empregado {
         return senha;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(float salario) {
         this.salario = salario;
     }
 

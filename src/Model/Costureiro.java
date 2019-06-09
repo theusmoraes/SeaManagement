@@ -12,11 +12,11 @@ public class Costureiro extends Empregado{
         this.minutosTrabalhados = minutosTrabalhados;
     }
      
-    public void comissao(double vendas) {
+    public void comissao(float vendas) {
        if (vendas >= 500){  
-        this.salario = salario * 1.5 ;
+           this.salario *= 1.2;
        }else{
-           this.salario = salario * 1.2;
+           this.salario *= 1.2;
         }
     }
 }

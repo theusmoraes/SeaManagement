@@ -3,8 +3,8 @@ package Model;
 
 public class Tecido {
   private String nome;
-  private double disponivel;
-  private double vendido;
+  private float disponivel;
+  private float vendido;
 
 public Tecido(){
     this.disponivel = 0;
@@ -14,11 +14,11 @@ public Tecido(){
         return nome;
     }
 
-    public double getDisponivel() {
+    public float getDisponivel() {
         return disponivel;
     }
 
-    public double getVendido() {
+    public float getVendido() {
         return vendido;
     }
 
@@ -26,14 +26,14 @@ public Tecido(){
         this.nome = nome;
     }
 
-    public void acrescentaTecido(double disponivel) {
+    public void acrescentaTecido(float disponivel) {
         this.disponivel += disponivel;
     }
-    public void decrescentaTecido(double disponivel){
+    public void decrescentaTecido(float disponivel){
         this.disponivel -= disponivel;
     }
 
-    public void setVendido(double vendido) {
+    public void setVendido(float vendido) {
         this.vendido += vendido;
         this.decrescentaTecido(vendido);
     }

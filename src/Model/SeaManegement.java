@@ -6,16 +6,16 @@ import View.*;
 public class SeaManegement {
 
     public static void main(String[] args) {
-        /*Login log = new Login();
+        Login log = new Login();
         log.setVisible(true);
         Costureiro cost = new Costureiro();
         Controller control = new Controller(log, cost);
         log.setVisible(true);
         log.setLocationRelativeTo(null);
-                                   */
-        TelaEmpregado tela = new TelaEmpregado();
+                                  
+        /*TelaAdimin tela = new TelaAdimin();
         tela.setVisible(true);
-        tela.setLocationRelativeTo(null);
+        tela.setLocationRelativeTo(null);*/
         
 
     }
