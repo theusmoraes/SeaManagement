@@ -13,6 +13,10 @@ public class SeaManegement {
         Controller control = new Controller(log, cost);
        log.setVisible(true);
        log.setLocationRelativeTo(null);
+                                  
+        /*TelaAdimin tela = new TelaAdimin();
+        tela.setVisible(true);
+        tela.setLocationRelativeTo(null);*/
         
   
        

@@ -12,7 +12,7 @@ package Model;
 public class Produto {
     private int idproduto;
     private String nome;
-    private double preco;
+    private float preco;
     private String tipoproduto;
     //testando
     public int getIdproduto() {
@@ -31,11 +31,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 

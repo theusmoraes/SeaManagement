@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.Color;
+
 /**
  *
  * @author Geral
@@ -16,6 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        brnEntrar.setBackground(new Color (237,223,196));
     }
 
     /**
@@ -27,7 +30,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnUser = new javax.swing.JTextField();
@@ -35,19 +37,11 @@ public class Login extends javax.swing.JFrame {
         BtnSenha = new javax.swing.JTextField();
         brnEntrar = new javax.swing.JButton();
         jlabel2 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        btnUser1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        BtnSenha1 = new javax.swing.JTextField();
-        brnEntrar1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Prancheta 2 400 x 400 png.png"))); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(54, 31, 37));
 
@@ -97,7 +91,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(brnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,76 +106,10 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(BtnSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(brnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
 
         jlabel2.setBackground(new java.awt.Color(237, 223, 196));
-
-        jPanel5.setBackground(new java.awt.Color(54, 31, 37));
-
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(237, 223, 196));
-        jLabel7.setText("Usuario:");
-
-        btnUser1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnUser1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUser1ActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(237, 223, 196));
-        jLabel8.setText("Senha:");
-
-        BtnSenha1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        BtnSenha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSenha1ActionPerformed(evt);
-            }
-        });
-
-        brnEntrar1.setBackground(new java.awt.Color(255, 255, 255));
-        brnEntrar1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        brnEntrar1.setText("Entrar");
-        brnEntrar1.setBorderPainted(false);
-        brnEntrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                brnEntrar1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BtnSenha1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(btnUser1)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(brnEntrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(brnEntrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Prancheta 2 400 x 400 png.png"))); // NOI18N
 
@@ -190,21 +118,18 @@ public class Login extends javax.swing.JFrame {
         jlabel2Layout.setHorizontalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jlabel2Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(404, 404, 404)
                 .addComponent(jLabel2)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 459, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel9)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jLabel9))))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -213,44 +138,26 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(53, 53, 53)
                         .addComponent(jLabel3)))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 964, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 473, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(72, 72, 72)
-                    .addComponent(jLabel4)
-                    .addContainerGap(92, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(551, Short.MAX_VALUE)))
+                    .addComponent(jlabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(70, 70, 70)
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)))
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jlabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)))
+                .addComponent(jlabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -267,18 +174,6 @@ public class Login extends javax.swing.JFrame {
     private void brnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnEntrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_brnEntrarActionPerformed
-
-    private void btnUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUser1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUser1ActionPerformed
-
-    private void BtnSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSenha1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnSenha1ActionPerformed
-
-    private void brnEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnEntrar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_brnEntrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,21 +213,14 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField BtnSenha;
-    public javax.swing.JTextField BtnSenha1;
     public javax.swing.JButton brnEntrar;
-    public javax.swing.JButton brnEntrar1;
     public javax.swing.JTextField btnUser;
-    public javax.swing.JTextField btnUser1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jlabel2;
     // End of variables declaration//GEN-END:variables
 }
