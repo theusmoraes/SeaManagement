@@ -22,7 +22,6 @@ public class Controller implements ActionListener, KeyListener {
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
-        this.login.brnEntrar.setBackground(new Color (237,223,196));
         this.login.btnUser.addActionListener(this);
         this.login.BtnSenha.addActionListener(this);
         this.login.brnEntrar.addActionListener(this);
