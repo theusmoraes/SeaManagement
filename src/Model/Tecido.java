@@ -2,9 +2,36 @@
 package Model;
 
 public class Tecido {
-  private String nome;
-  private double disponivel;
-  private double vendido;
+ private int id;
+    private int idse;
+    private int idsa;
+    private String nome;
+    private float disponivel;
+    private float vendido;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdse() {
+        return idse;
+    }
+
+    public void setIdse(int idse) {
+        this.idse = idse;
+    }
+
+    public int getIdsa() {
+        return idsa;
+    }
+
+    public void setIdsa(int idsa) {
+        this.idsa = idsa;
+    }
 
 public Tecido(){
     this.disponivel = 0;
@@ -26,14 +53,14 @@ public Tecido(){
         this.nome = nome;
     }
 
-    public void acrescentaTecido(double disponivel) {
+    public void acrescentaTecido(Float disponivel) {
         this.disponivel += disponivel;
     }
-    public void decrescentaTecido(double disponivel){
+    public void decrescentaTecido(Float disponivel){
         this.disponivel -= disponivel;
     }
 
-    public void setVendido(double vendido) {
+    public void setVendido(Float vendido) {
         this.vendido += vendido;
         this.decrescentaTecido(vendido);
     }

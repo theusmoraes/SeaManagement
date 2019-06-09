@@ -3,9 +3,19 @@ package Model;
 
 
 public class Maquina {
+    private int idmaquina;
     private String nome;
     private String descricao;
     private String diaManuntencao;
+
+    public int getIdmaquina() {
+        return idmaquina;
+    }
+
+    public void setIdmaquina(int idmaquina) {
+        this.idmaquina = idmaquina;
+    }
+    
 
     public String getNome() {
         return nome;

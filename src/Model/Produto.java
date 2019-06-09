@@ -10,10 +10,19 @@ package Model;
  * @author Ronaldo
  */
 public class Produto {
+    private int idproduto;
     private String nome;
     private double preco;
     private String tipoproduto;
     //testando
+    public int getIdproduto() {
+        return idproduto;
+    }
+
+    public void setIdproduto(int idproduto) {
+        this.idproduto = idproduto;
+    }
+    
     public String getNome() {
         return nome;
     }

@@ -2,12 +2,22 @@
 package Model;
 
 public abstract class Empregado {
+    protected int id;
     protected String nome;
     protected String cpf;
     protected String usuario;
     protected String senha;
     protected double salario;
     protected float horarioTrabalho;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public double getSalario() {
         return salario;

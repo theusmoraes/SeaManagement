@@ -3,23 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-/**
- *
- * @author Ronaldo
- */
+
+
 public class Conexao {
     public Connection getConnection() {
+        // tentando ronaldo foi12
 	     try {
-	    	Class.forName("com.mysql.jdbc.Driver");
-	         return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/teste", "root", "123456");
+	    	Class.forName("com.mysql.cj.jdbc.Driver");
+	         return (Connection) DriverManager.getConnection("jdbc:mysql://localhost/costu?useTimezone=true&serverTimezone=UTC", "root", "123456");
+                 
 	     } catch (Exception e) {
                  System.out.println("no foi");
-	         throw new RuntimeException(e);
+                 System.out.println("Model.Conexao.getConnection()"+e.getMessage());
+	         //throw new RuntimeException(e);
 	     }
+        return null;
 	 }
 }

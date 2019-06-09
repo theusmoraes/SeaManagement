@@ -2,10 +2,20 @@
 package Model;
 
 public class HistoricoDeUso {
+    private int idHistoricodeuso;
     private String horaInicio;
     private String horaFinal;
     private Maquina maquina;
     private Costureiro costureiro;
+
+    public int getIdHistoricodeuso() {
+        return idHistoricodeuso;
+    }
+
+    public void setIdHistoricodeuso(int idHistoricodeuso) {
+        this.idHistoricodeuso = idHistoricodeuso;
+    }
+    
 
     public String getHoraInicio() {
         return horaInicio;
