@@ -56,7 +56,7 @@ public class AdmDAO {
     public void insereAdm(int id,float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
         String registro = null;
         try{
-            String sql= "INSERT INTO adm VALUES (?,?,?,?,?,?,?,?,1);";
+            String sql= "INSERT INTO adm VALUES (?,?,?,?,?,?,?,1);";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setInt(1,id);
@@ -217,6 +217,35 @@ public class AdmDAO {
         }catch(Exception e){
             System.out.println("Erro:"+e.getMessage());
         }
+    }
+     public int tamanhoAdm(){
+        ArrayList<Adiministrador>adms = new ArrayList<>();
+        Adiministrador adm;
+        int cont=0;
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from adm");
+            ResultSet rs = stmt.executeQuery();
+             
+           while(rs.next()){
+               adm = new Adiministrador();
+               adm.setId(rs.getInt("idfuncionario"));
+               adm.setCpf(rs.getString("cpf"));
+                adm.setNome(rs.getString("nome"));
+                adm.setUsuario(rs.getString("usuario"));
+                adm.setSenha(rs.getString("senha"));
+                adm.setSalario(rs.getFloat("salario"));
+                adm.setHorarioTrabalho(rs.getFloat("horarioTrabalho"));
+               adms.add(adm);
+               cont++;
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return cont;
+        
     }
      
 }

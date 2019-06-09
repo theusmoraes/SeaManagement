@@ -1,6 +1,9 @@
 
 package Controller;
 
+import Dao.AdmDAO;
+import Dao.CostureiroDAO;
+import Model.Adiministrador;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +13,7 @@ import View.*;
 import Model.Costureiro;
 import Model.Empregado;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -21,7 +25,11 @@ public class Controller implements ActionListener, KeyListener {
      Costureiro costureiro = new Costureiro();
      TelaAdimin tela = new TelaAdimin();
      CadastroUsuario cadastro = new CadastroUsuario();
-
+     Adiministrador adm = new Adiministrador();
+     AdmDAO admdao= new AdmDAO();
+      Costureiro cos =new Costureiro();
+      CostureiroDAO cosDAO =new CostureiroDAO();
+     ArrayList<Adiministrador>adms = new ArrayList<>();
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -72,10 +80,13 @@ public class Controller implements ActionListener, KeyListener {
            if (senha.equals(confirma)){
                if (cadastro.cxAdmin.isSelected()){
                 //JOGA CADA COISA PARA O METODO "AdminDao"
+
+                admdao.insereAdm(2, Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario));
                    System.out.println("a");
 
                }else{
                 //JOGA CADA COISA PARA O METODO "CostureiroDAO"
+                cosDAO.insereCostureiro(2, Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario),1);
                }
                 cadastro.setVisible(false);
                 tela.setVisible(true);
