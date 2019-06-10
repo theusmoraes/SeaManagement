@@ -56,7 +56,7 @@ public class AdmDAO {
     public void insereAdm(int id,float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
         String registro = null;
         try{
-            String sql= "INSERT INTO adm VALUES (?,?,?,?,?,?,?,1);";
+            String sql= "INSERT INTO adm(cpf,nome,usuario,senha,salario,horarioTrabalho,id_loja VALUES (?,?,?,?,?,?,?,1)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setInt(1,id);
@@ -75,7 +75,7 @@ public class AdmDAO {
     }
      public void editarAdm(int id,float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
         try{
-            String sql = "update adm set cpf=?,nome=?, usuario=?,senha=?,salario=? ,horarioTrabalho=?  where id=?";
+            String sql = "update adm set cpf=?,nome=?, usuario=?,senha=?,salario=? ,horarioTrabalho=?  where idadm=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setFloat(1,cpf);
@@ -93,7 +93,7 @@ public class AdmDAO {
     }
      public void eliminarAdm(int id){
         try{
-            String sql = "delete adm where id=?";
+            String sql = "delete from adm where id=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setInt(1, id);
@@ -164,7 +164,6 @@ public class AdmDAO {
               costureiro.setSenha(rs.getString("senha"));
               costureiro.setSalario(rs.getFloat("salario"));
               costureiro.setHorarioTrabalho(rs.getFloat("horarioTrabalho"));
-               costureiro.setMinutosTrabalhados(rs.getFloat("minutosTrabalhados"));
                costureiros.add(costureiro);
               
            }
@@ -180,7 +179,7 @@ public class AdmDAO {
     public void insereSupervisaoAdm(int id,int id_adm,int id_funcionario){
         String registro = null;
         try{
-            String sql= "INSERT INTO supervisao VALUES (?,?,?);";
+            String sql= "INSERT INTO supervisao (id_adm,id_funcionario)VALUES (?,?,?)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setInt(1,id);
@@ -195,7 +194,7 @@ public class AdmDAO {
     }
      public void editarSupervisaoAdm(int id,int id_adm,int id_funcionario){
         try{
-            String sql = "update supervisao set id_adm=?,id_funcionario=?, where id=?";
+            String sql = "update supervisao set id_adm=?,id_funcionario=?, where idsupervisao=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setInt(1,id_adm);
@@ -209,7 +208,7 @@ public class AdmDAO {
     }
      public void eliminarSupervisaoAdm(int id){
         try{
-            String sql = "delete supervisao where id=?";
+            String sql = "delete from supervisao where idsupervisao=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setInt(1, id);
@@ -218,34 +217,39 @@ public class AdmDAO {
             System.out.println("Erro:"+e.getMessage());
         }
     }
-     public int tamanhoAdm(){
+    public Adiministrador SelecionarAdm(int id){
         ArrayList<Adiministrador>adms = new ArrayList<>();
         Adiministrador adm;
-        int cont=0;
+        
         
         try{
             Connection con = conexao.getConnection();
-            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from adm");
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from adm where id=?");
+            stmt.setInt(1,id);
+            
             ResultSet rs = stmt.executeQuery();
-             
+             if (!rs.isBeforeFirst()){
+                
+                return null;
+             } 
+   
            while(rs.next()){
                adm = new Adiministrador();
-               adm.setId(rs.getInt("idfuncionario"));
+               adm.setId(rs.getInt("idadm"));
                adm.setCpf(rs.getString("cpf"));
                 adm.setNome(rs.getString("nome"));
                 adm.setUsuario(rs.getString("usuario"));
                 adm.setSenha(rs.getString("senha"));
                 adm.setSalario(rs.getFloat("salario"));
                 adm.setHorarioTrabalho(rs.getFloat("horarioTrabalho"));
-               adms.add(adm);
-               cont++;
+              adms.add(adm);
               
            }
             
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
-        } return cont;
-        
-    }
+        } 
+        return adms.get(0);
+    } 
      
 }

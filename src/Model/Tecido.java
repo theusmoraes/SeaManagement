@@ -3,8 +3,8 @@ package Model;
 
 public class Tecido {
      private int id;
-    private int idse;
-    private int idsa;
+    private int id_fornecedor;
+    private int id_loja;
     private String nome;
     private float disponivel;
     private float vendido;
@@ -16,23 +16,20 @@ public class Tecido {
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getIdse() {
-        return idse;
+    public int getId_loja() {
+        return id_loja;
     }
 
-    public void setIdse(int idse) {
-        this.idse = idse;
+    public void setId_loja(int id_loja) {
+        this.id_loja = id_loja;
+    }
+    public int getId_fornecedor() {
+        return id_fornecedor;
     }
 
-    public int getIdsa() {
-        return idsa;
+    public void setId_fornecedor(int id_fornecedor) {
+        this.id_fornecedor = id_fornecedor;
     }
-
-    public void setIdsa(int idsa) {
-        this.idsa = idsa;
-    }
-
 
 public Tecido(){
     this.disponivel = 0;
