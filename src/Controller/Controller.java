@@ -6,10 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import Dao.*;
 import View.*;
 import Model.Costureiro;
 import Model.Empregado;
+import Model.Fornecedor;
 import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -17,12 +21,16 @@ import javax.swing.table.DefaultTableModel;
  * @author Geral
  */
 public class Controller implements ActionListener, KeyListener {
+     TecidoDAO tecidoDAO = new TecidoDAO();
+     ForcenedorDAO fornecedorDAO = new ForcenedorDAO();
+     MaquinaDAO maquinaDAO = new MaquinaDAO();
+     ProdutoDAO produtoDAO =new ProdutoDAO();
      Login login = new Login();
      Costureiro costureiro = new Costureiro();
      TelaAdimin tela = new TelaAdimin();
      CadastroUsuario cadastro = new CadastroUsuario();
      Cadastro cadastroR = new Cadastro();
-
+     
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -34,6 +42,14 @@ public class Controller implements ActionListener, KeyListener {
 
 
         
+        
+    }
+    public void prencherListaTecidos (JComboBox box){
+        int numTecidos = tecidoDAO.listaTecido().size();
+        int i;
+        for (i=0;i<numTecidos;i++){
+            box.addItem(tecidoDAO.listaTecido().get(i).getNome());
+        }
         
     }
  
@@ -97,7 +113,8 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastroR.txtQuantTecido.addActionListener(this);
            this.cadastroR.txtSegundo.addActionListener(this);
            this.cadastroR.txtTerceiro.addActionListener(this);
-           
+           this.cadastroR.jcCadastros.setVisible(true);
+           this.cadastroR.btnConfirmaOpcoes.setVisible(true);
            this.cadastroR.btnAdicionar.setVisible(false);
            this.cadastroR.btnSalvar.setVisible(false);
            this.cadastroR.jcTecidos.setVisible(false);
@@ -113,9 +130,10 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastroR.txtTerceiro.setVisible(false);
        }
        if (e.getSource() == cadastroR.btnConfirmaOpcoes ){
-           System.out.println(cadastroR.jcCadastros.getSelectedItem());
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
-               System.out.println("cheguei");
+               prencherListaTecidos(cadastroR.jcTecidos);
+               cadastroR.btnConfirmaOpcoes.setVisible(false);
+               cadastroR.jcCadastros.setVisible(false);
                cadastroR.tttAdicionarTecidos.setVisible(true);
                cadastroR.tttRegistroTecido1.setVisible(true);
                cadastroR.txtNome.setVisible(true);
@@ -123,8 +141,98 @@ public class Controller implements ActionListener, KeyListener {
                cadastroR.tttQuantidadeComprado.setVisible(true);
                cadastroR.txtQuantTecido.setVisible(true);
                cadastroR.jcTecidos.setVisible(true);
-               
+               cadastroR.btnAdicionar.setVisible(true);
+               cadastroR.btnSalvar.setVisible(true);
+               cadastroR.tttSegundo.setVisible(true);
+               cadastroR.txtSegundo.setVisible(true);
+               cadastroR.tttSegundo.setText("Id Fornecedor");
+               cadastroR.tttTerceiro.setVisible(false);
+               cadastroR.txtTerceiro.setVisible(false);
+           }else{
+                if (cadastroR.jcCadastros.getSelectedItem().equals("Fornecedor")){
+                    cadastroR.btnSalvar.setVisible(true);
+                     cadastroR.btnConfirmaOpcoes.setVisible(false);
+                     cadastroR.jcCadastros.setVisible(false);
+                     cadastroR.tttNome.setVisible(true);
+                     cadastroR.tttSegundo.setVisible(true);
+                     cadastroR.tttSegundo.setText("Id Fornecedor");
+                     cadastroR.txtSegundo.setVisible(true);
+                     cadastroR.txtNome.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setText("Cadastrar Fornecedor");
+                }else{
+                  if (cadastroR.jcCadastros.getSelectedItem().equals("Maquina")){
+                     cadastroR.btnConfirmaOpcoes.setVisible(false);
+                     cadastroR.jcCadastros.setVisible(false);
+                     cadastroR.tttRegistroTecido1.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setText("Cadastrar Tecido");
+                     cadastroR.tttNome.setVisible(true);
+                     cadastroR.tttSegundo.setVisible(true);
+                     cadastroR.tttTerceiro.setVisible(true);
+                     cadastroR.txtNome.setVisible(true);
+                     cadastroR.txtSegundo.setVisible(true);
+                     cadastroR.txtTerceiro.setVisible(true);
+                     cadastroR.btnSalvar.setVisible(true);
+                     cadastroR.tttSegundo.setText("Descrição");
+                     cadastroR.tttTerceiro.setText("Dia manutenção");
+                    
+                }else{
+                    if (cadastroR.jcCadastros.getSelectedItem().equals("Produto")){
+                     cadastroR.btnConfirmaOpcoes.setVisible(false);
+                     cadastroR.jcCadastros.setVisible(false);
+                     cadastroR.tttNome.setVisible(true);
+                     cadastroR.txtNome.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setVisible(true);
+                     cadastroR.tttSegundo.setVisible(true);
+                     cadastroR.txtSegundo.setVisible(true);
+                     cadastroR.txtTerceiro.setVisible(true);
+                     cadastroR.tttTerceiro.setVisible(true);
+                     cadastroR.btnSalvar.setVisible(true);
+                     cadastroR.tttTerceiro.setVisible(true);
+                     cadastroR.tttTerceiro.setText("tipo do Produto");
+                     cadastroR.tttSegundo.setText("preço");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Escolha uma opção valida");
+                    }
+                  }  
+               }       
            }
+       }
+       if (e.getSource() == cadastroR.btnSalvar){
+           if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
+               String nome = cadastroR.txtNome.getText();
+               int id_fornecedor = Integer.parseInt(cadastroR.txtSegundo.getText());
+               
+           }else{
+               if (cadastroR.jcCadastros.getSelectedItem().equals("Fornecedor")){
+                   String nome = cadastroR.txtNome.getText();
+                   String id_fornecedor = cadastroR.txtSegundo.getText();
+                  
+               }else{
+                if (cadastroR.jcCadastros.getSelectedItem().equals("Maquina")){
+                     String nome = cadastroR.txtNome.getText();
+                     String descricao = cadastroR.txtSegundo.getText();
+                     String manutencao = cadastroR.txtTerceiro.getText();
+                       
+                   }else{
+                        String nome = cadastroR.txtNome.getText();
+                        float preco = Float.parseFloat(cadastroR.txtSegundo.getText());
+                        String TipoProduto = cadastroR.txtTerceiro.getText();
+                        
+                        
+                }
+               }
+           }
+           cadastroR.setVisible(false);
+           tela.setVisible(true);
+       }
+       if (e.getSource() == cadastroR.btnSalvar){
+         int quantidade_tecido = Integer.parseInt(cadastroR.txtQuantTecido.getText());
+         cadastroR.setVisible(false);
+         tela.setVisible(true);
+
+           
        }
     }
 
