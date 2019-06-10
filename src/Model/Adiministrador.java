@@ -22,4 +22,5 @@ public class Adiministrador extends Empregado{
     public void cadastraumfuniSurpevisao (Costureiro costureiro){
         surpevisao.add(costureiro);
     }
+    
 }

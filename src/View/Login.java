@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
 
 import java.awt.Color;
@@ -20,6 +16,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         brnEntrar.setBackground(new Color (237,223,196));
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
