@@ -12,12 +12,22 @@ import java.util.ArrayList;
  * @author Ronaldo
  */
 public class Fornecedor {
+    private int idfornecedor;
     private String nome;
     private ArrayList<String>tecidos;
 
     public Fornecedor() {
         this.tecidos=new ArrayList();
     }
+
+    public int getIdfornecedor() {
+        return idfornecedor;
+    }
+
+    public void setIdfornecedor(int idfornecedor) {
+        this.idfornecedor = idfornecedor;
+    }
+    
     
     public String getNome() {
         return nome;
