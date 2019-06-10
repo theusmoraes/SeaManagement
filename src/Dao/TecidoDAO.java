@@ -122,5 +122,31 @@ public class TecidoDAO {
         
     }
     
-    
+     public Tecido SelecioneTecidoNome(String nome){
+        ArrayList<Tecido>tecidos = new ArrayList<>();
+        Tecido tecido;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from tecido where idtecido=?");
+            stmt.setString(1,nome);
+            ResultSet rs = stmt.executeQuery();
+           while(rs.next()){
+               tecido = new Tecido();
+                tecido.setId(rs.getInt("idtecido"));
+                tecido.setNome(rs.getString("nome"));
+                tecido.setVendido(rs.getFloat("vendido"));
+                tecido.acrescentaTecido(rs.getFloat("disponivel"));
+                tecido.setId_fornecedor(rs.getInt("id_fonecedor"));
+                tecido.setId_loja(rs.getInt("id_loja"));
+               tecidos.add(tecido);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return tecidos.get(0);
+        
+    }
 }

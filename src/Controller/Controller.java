@@ -81,12 +81,12 @@ public class Controller implements ActionListener, KeyListener {
                if (cadastro.cxAdmin.isSelected()){
                 //JOGA CADA COISA PARA O METODO "AdminDao"
 
-                admdao.insereAdm(2, Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario));
+                admdao.insereAdm( Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario));
                    System.out.println("a");
 
                }else{
                 //JOGA CADA COISA PARA O METODO "CostureiroDAO"
-                cosDAO.insereCostureiro(2, Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario),1);
+                cosDAO.insereCostureiro( Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario));
                }
                 cadastro.setVisible(false);
                 tela.setVisible(true);

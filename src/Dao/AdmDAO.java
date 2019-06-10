@@ -53,19 +53,18 @@ public class AdmDAO {
         } return adms;
         
     }
-    public void insereAdm(int id,float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
+    public void insereAdm(float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
         String registro = null;
         try{
-            String sql= "INSERT INTO adm(cpf,nome,usuario,senha,salario,horarioTrabalho,id_loja VALUES (?,?,?,?,?,?,?,1)";
+            String sql= "INSERT INTO adm(cpf,nome,usuario,senha,salario,horarioTrabalho,id_loja VALUES (?,?,?,?,?,?,1)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
-            stmt.setInt(1,id);
-            stmt.setFloat(2, cpf);
-            stmt.setString(3, nome);
-            stmt.setString(4,usuario);
-            stmt.setString(5,senha);
-            stmt.setFloat(6,salario);
-            stmt.setFloat(7,horarioTrabalho);
+            stmt.setFloat(1, cpf);
+            stmt.setString(2, nome);
+            stmt.setString(3,usuario);
+            stmt.setString(4,senha);
+            stmt.setFloat(5,salario);
+            stmt.setFloat(6,horarioTrabalho);
             stmt.execute();
             stmt.close();
             con.close();
@@ -176,15 +175,15 @@ public class AdmDAO {
      
      
     //insert into supervisao(idsupervisao,id_adm,id_funcionario) values (1,1);
-    public void insereSupervisaoAdm(int id,int id_adm,int id_funcionario){
+    public void insereSupervisaoAdm(int id_adm,int id_funcionario){
         String registro = null;
         try{
-            String sql= "INSERT INTO supervisao (id_adm,id_funcionario)VALUES (?,?,?)";
+            String sql= "INSERT INTO supervisao (id_adm,id_funcionario)VALUES (?,?)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
-            stmt.setInt(1,id);
-            stmt.setInt(2,id_adm);
-            stmt.setInt(3,id_funcionario);
+            
+            stmt.setInt(1,id_adm);
+            stmt.setInt(2,id_funcionario);
             stmt.execute();
             stmt.close();
             con.close();

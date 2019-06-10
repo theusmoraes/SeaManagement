@@ -53,7 +53,7 @@ public class ProdutoDAO {
         
     }
     
-    public void insereProduto(String nome, float preco,String tipoproduto, int id_tecido, int usadaquant){
+    public void insereProduto(String nome, float preco,String tipoproduto, int id_tecido, float usadaquant){
         String registro = null;
         try{
             String sql= "INSERT INTO produto(nome,preco,tipoproduto,id_tecido,usadaquant,id_loja) VALUES (?,?,?,?,?,1)";
@@ -71,7 +71,7 @@ public class ProdutoDAO {
             System.out.println("Erro: "+e.getMessage());
         }
     }
-     public void editarProduto(int idproduto,String nome, float preco,String tipoproduto, int id_tecido, int usadaquant){
+     public void editarProduto(int idproduto,String nome, float preco,String tipoproduto, int id_tecido, float usadaquant){
         try{
             String sql = "update produto set nome=? ,preco =?,tipoproduto =?,id_tecido=?,usadaquant=? where idproduto=?";
             Connection conexaobd = conexao.getConnection();
