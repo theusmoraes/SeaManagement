@@ -19,24 +19,29 @@ public class TelaAdimin extends javax.swing.JFrame {
      */
     public TelaAdimin() {
         initComponents();
+        btnCadastroResto.setBackground(new Color (237,223,196));
+        btnCadastroResto.setBorder(null);
         btnPerfil.setBackground(new Color (237,223,196));
         btnCadastro.setBackground(new Color (237,223,196));
         btnHistorico.setBackground(new Color (237,223,196));
         btnCadastro.setBorder(null);
         btnPerfil.setBorder(null);
         btnHistorico.setBorder(null);
+        ImageIcon cadastroReal = new ImageIcon ("src/imagens/cadastrar.png");
         ImageIcon rodinha = new ImageIcon("src/imagens/rodinha.png");
         ImageIcon cadastro = new ImageIcon ("src/imagens/papel.png");
+        cadastroReal.setImage(cadastroReal.getImage().getScaledInstance(btnCadastroResto.getWidth(),btnCadastroResto.getHeight(), 1));
         cadastro.setImage(cadastro.getImage().getScaledInstance(btnCadastro.getWidth(),btnCadastro.getHeight(), 1));
         rodinha.setImage(rodinha.getImage().getScaledInstance(pngRodinha.getWidth(), pngRodinha.getHeight(), 1));
         ImageIcon perfil = new ImageIcon("src/Imagens/PessoaPerfil2.png");
         perfil.setImage(perfil.getImage().getScaledInstance(btnPerfil.getWidth(), btnPerfil.getHeight(), 1));
         ImageIcon historico = new ImageIcon("src/Imagens/paper.png");
         historico.setImage(historico.getImage().getScaledInstance(btnCadastro.getWidth(), btnCadastro.getHeight(), 1));
-        btnCadastro.setIcon(cadastro);
+        btnCadastroResto.setIcon(cadastroReal);
+        btnCadastro.setIcon(perfil);
         pngRodinha.setIcon(rodinha);
-        btnHistorico.setIcon(historico);
-        btnPerfil.setIcon(perfil);
+        btnHistorico.setIcon(cadastro);
+        btnPerfil.setIcon(historico);
     }
 
     /**
@@ -48,6 +53,11 @@ public class TelaAdimin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
         jPanel5 = new javax.swing.JPanel();
         pngRodinha = new javax.swing.JLabel();
         jlabel2 = new javax.swing.JPanel();
@@ -61,6 +71,18 @@ public class TelaAdimin extends javax.swing.JFrame {
         txtRegistro1 = new javax.swing.JLabel();
         btnHistorico = new javax.swing.JButton();
         txtHistorico = new javax.swing.JLabel();
+        btnCadastroResto = new javax.swing.JButton();
+        txtPerfil2 = new javax.swing.JLabel();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jMenu3.setText("jMenu3");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +113,7 @@ public class TelaAdimin extends javax.swing.JFrame {
         btnPerfil.setPreferredSize(new java.awt.Dimension(50, 61));
 
         txtPerfil1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
-        txtPerfil1.setText("Perfil");
+        txtPerfil1.setText("Relatorio");
 
         btnCadastro.setPreferredSize(new java.awt.Dimension(150, 150));
         btnCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +123,7 @@ public class TelaAdimin extends javax.swing.JFrame {
         });
 
         txtRegistro1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
-        txtRegistro1.setText("Cadastro");
+        txtRegistro1.setText("Registro Usuario");
 
         btnHistorico.setPreferredSize(new java.awt.Dimension(150, 150));
         btnHistorico.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +134,16 @@ public class TelaAdimin extends javax.swing.JFrame {
 
         txtHistorico.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         txtHistorico.setText("Historico");
+
+        btnCadastroResto.setPreferredSize(new java.awt.Dimension(150, 150));
+        btnCadastroResto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroRestoActionPerformed(evt);
+            }
+        });
+
+        txtPerfil2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        txtPerfil2.setText("Cadastro");
 
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
@@ -131,23 +163,31 @@ public class TelaAdimin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel3))
             .addGroup(jlabel2Layout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPerfil1)
-                    .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
-                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRegistro1)
+                .addGap(177, 177, 177)
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(70, 70, 70)
+                        .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))
+                    .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addComponent(txtPerfil2)
+                        .addGap(43, 43, 43)
+                        .addComponent(txtPerfil1)
+                        .addGap(37, 37, 37)))
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                        .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                        .addComponent(txtRegistro1)
+                        .addGap(30, 30, 30)))
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtHistorico)
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,19 +196,21 @@ public class TelaAdimin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(48, 48, 48)
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtRegistro1)
                             .addComponent(txtPerfil1)
-                            .addComponent(txtHistorico))
+                            .addComponent(txtHistorico)
+                            .addComponent(txtPerfil2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                            .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
@@ -205,6 +247,10 @@ public class TelaAdimin extends javax.swing.JFrame {
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastroActionPerformed
+
+    private void btnCadastroRestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroRestoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastroRestoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,17 +289,24 @@ public class TelaAdimin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCadastro;
+    public javax.swing.JButton btnCadastroResto;
     public javax.swing.JButton btnHistorico;
     public javax.swing.JButton btnPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jlabel2;
     public javax.swing.JLabel pngRodinha;
     public javax.swing.JLabel txtHistorico;
     public javax.swing.JLabel txtPerfil1;
+    public javax.swing.JLabel txtPerfil2;
     public javax.swing.JLabel txtRegistro1;
     // End of variables declaration//GEN-END:variables
 }

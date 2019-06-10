@@ -21,6 +21,7 @@ public class Controller implements ActionListener, KeyListener {
      Costureiro costureiro = new Costureiro();
      TelaAdimin tela = new TelaAdimin();
      CadastroUsuario cadastro = new CadastroUsuario();
+     Cadastro cadastroR = new Cadastro();
 
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
@@ -46,6 +47,7 @@ public class Controller implements ActionListener, KeyListener {
            this.tela.btnCadastro.addActionListener(this);
            this.tela.btnPerfil.addActionListener(this);
            this.tela.btnHistorico.addActionListener(this);
+           this.tela.btnCadastroResto.addActionListener(this);
            tela.setVisible(true);
        }
        if (e.getSource() == tela.btnCadastro){
@@ -82,6 +84,47 @@ public class Controller implements ActionListener, KeyListener {
                
            }
            
+       }
+       if (e.getSource() == tela.btnCadastroResto){
+           tela.setVisible(false);
+           cadastroR.setVisible(true);
+           this.cadastroR.btnConfirmaOpcoes.addActionListener(this);
+           this.cadastroR.btnAdicionar.addActionListener(this);           
+           this.cadastroR.btnSalvar.addActionListener(this);
+           this.cadastroR.jcCadastros.addActionListener(this);
+           this.cadastroR.jcTecidos.addActionListener(this);
+           this.cadastroR.txtNome.addActionListener(this);
+           this.cadastroR.txtQuantTecido.addActionListener(this);
+           this.cadastroR.txtSegundo.addActionListener(this);
+           this.cadastroR.txtTerceiro.addActionListener(this);
+           
+           this.cadastroR.btnAdicionar.setVisible(false);
+           this.cadastroR.btnSalvar.setVisible(false);
+           this.cadastroR.jcTecidos.setVisible(false);
+           this.cadastroR.tttAdicionarTecidos.setVisible(false);
+           this.cadastroR.tttNome.setVisible(false);
+           this.cadastroR.tttQuantidadeComprado.setVisible(false);
+           this.cadastroR.tttRegistroTecido1.setVisible(false);
+           this.cadastroR.tttSegundo.setVisible(false);
+           this.cadastroR.tttTerceiro.setVisible(false);
+           this.cadastroR.txtNome.setVisible(false);
+           this.cadastroR.txtQuantTecido.setVisible(false);
+           this.cadastroR.txtSegundo.setVisible(false);
+           this.cadastroR.txtTerceiro.setVisible(false);
+       }
+       if (e.getSource() == cadastroR.btnConfirmaOpcoes ){
+           System.out.println(cadastroR.jcCadastros.getSelectedItem());
+           if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
+               System.out.println("cheguei");
+               cadastroR.tttAdicionarTecidos.setVisible(true);
+               cadastroR.tttRegistroTecido1.setVisible(true);
+               cadastroR.txtNome.setVisible(true);
+               cadastroR.tttNome.setVisible(true);
+               cadastroR.tttQuantidadeComprado.setVisible(true);
+               cadastroR.txtQuantTecido.setVisible(true);
+               cadastroR.jcTecidos.setVisible(true);
+               
+           }
        }
     }
 
