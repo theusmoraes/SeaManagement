@@ -120,14 +120,14 @@ public class Cadastro extends javax.swing.JFrame {
         txtTerceiro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel6.add(txtTerceiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 210, 30));
 
-        jcTecidos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Selecione uma das opções de tecidos>", " " }));
+        jcTecidos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Selecione uma das opções de tecidos>" }));
         jcTecidos.setToolTipText("");
         jlabel6.add(jcTecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 240, 30));
 
         tttAdicionarTecidos.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         tttAdicionarTecidos.setForeground(new java.awt.Color(54, 31, 37));
         tttAdicionarTecidos.setText("Adicionar Tecidos");
-        jlabel6.add(tttAdicionarTecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 210, 30));
+        jlabel6.add(tttAdicionarTecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 270, 30));
 
         tttRegistroTecido1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         tttRegistroTecido1.setForeground(new java.awt.Color(54, 31, 37));
@@ -148,7 +148,7 @@ public class Cadastro extends javax.swing.JFrame {
                 btnSalvarActionPerformed(evt);
             }
         });
-        jlabel6.add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 120, 30));
+        jlabel6.add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 120, 30));
 
         btnAdicionar.setText("Adicionar");
         jlabel6.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 120, 30));

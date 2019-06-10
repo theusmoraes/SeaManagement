@@ -55,9 +55,11 @@ public class Controller implements ActionListener, KeyListener {
     public void prencherListaTecidos (JComboBox box){
         int numTecidos = tecidoDAO.listaTecido().size();
         int i;
+        box.removeAllItems();
         for (i=0;i<numTecidos;i++){
             box.addItem(tecidoDAO.listaTecido().get(i).getNome());
         }
+            
         
     }
  
@@ -192,6 +194,15 @@ public class Controller implements ActionListener, KeyListener {
                     if (cadastroR.jcCadastros.getSelectedItem().equals("Produto")){
                      cadastroR.btnConfirmaOpcoes.setVisible(false);
                      cadastroR.jcCadastros.setVisible(false);
+                     prencherListaTecidos(cadastroR.jcTecidos);
+
+                     cadastroR.tttQuantidadeComprado.setVisible(true);
+                     cadastroR.txtQuantTecido.setVisible(true);
+                     cadastroR.jcTecidos.setVisible(true);
+                     cadastroR.tttQuantidadeComprado.setText("Quantidade (kg):");
+                     cadastroR.tttAdicionarTecidos.setVisible(true);
+                     cadastroR.tttAdicionarTecidos.setText("Tecido pára fabricar a peça");
+                     
                      cadastroR.tttNome.setVisible(true);
                      cadastroR.txtNome.setVisible(true);
                      cadastroR.tttRegistroTecido1.setVisible(true);
@@ -214,23 +225,32 @@ public class Controller implements ActionListener, KeyListener {
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
                String nome = cadastroR.txtNome.getText();
                int id_fornecedor = Integer.parseInt(cadastroR.txtSegundo.getText());
+               TecidoDAO tecidoDAO = new TecidoDAO();
+               tecidoDAO.insereTecido(nome,0, id_fornecedor);
+               
                
            }else{
                if (cadastroR.jcCadastros.getSelectedItem().equals("Fornecedor")){
                    String nome = cadastroR.txtNome.getText();
                    String id_fornecedor = cadastroR.txtSegundo.getText();
+                   fornecedorDAO.insereFornecedor(nome);
                   
                }else{
                 if (cadastroR.jcCadastros.getSelectedItem().equals("Maquina")){
                      String nome = cadastroR.txtNome.getText();
                      String descricao = cadastroR.txtSegundo.getText();
                      String manutencao = cadastroR.txtTerceiro.getText();
+                     maquinaDAO.insereMaquina(nome, descricao, manutencao);
                        
                    }else{
                         String nome = cadastroR.txtNome.getText();
                         float preco = Float.parseFloat(cadastroR.txtSegundo.getText());
-                        String TipoProduto = cadastroR.txtTerceiro.getText();
+                        String tipoProduto = cadastroR.txtTerceiro.getText();
+                        String tipoTecido = (String) cadastroR.jcTecidos.getSelectedItem();
+                        int usadaquant = Integer.parseInt(cadastroR.txtQuantTecido.getText());
+                        produtoDAO.insereProduto(nome, preco, tipoProduto, 1, usadaquant);
                         
+//                        produtoDAO.insereProduto(nome, preco, TipoProduto, id_tecido, usadaquant);
                         
                 }
                }
@@ -238,7 +258,7 @@ public class Controller implements ActionListener, KeyListener {
            cadastroR.setVisible(false);
            tela.setVisible(true);
        }
-       if (e.getSource() == cadastroR.btnSalvar){
+       if (e.getSource() == cadastroR.btnAdicionar){
          int quantidade_tecido = Integer.parseInt(cadastroR.txtQuantTecido.getText());
          cadastroR.setVisible(false);
          tela.setVisible(true);
