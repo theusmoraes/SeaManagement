@@ -369,7 +369,6 @@
               <Color blue="c4" green="df" red="ed" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="O usuario ser&#xe1; um administrador"/>
-            <Property name="actionCommand" type="java.lang.String" value="O usuario ser&#xe1; um administrador"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

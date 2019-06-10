@@ -39,8 +39,8 @@ public class TecidoDAO {
                 tecido.setNome(rs.getString("nome"));
                 tecido.setVendido(rs.getFloat("vendido"));
                 tecido.acrescentaTecido(rs.getFloat("disponivel"));
-                tecido.setIdsa(rs.getInt("id_fonecedor"));
-                tecido.setIdse(rs.getInt("id_loja"));
+                tecido.setId_fornecedor(rs.getInt("id_fonecedor"));
+                tecido.setId_loja(rs.getInt("id_loja"));
                tecidos.add(tecido);
               
            }
@@ -51,16 +51,15 @@ public class TecidoDAO {
         
     }
     
-    public void insereTecido(int id ,String nome, float disponivel,float vendido){
+    public void insereTecido(String nome, float disponivel,int id_fornecedor){
         String registro = null;
         try{
-            String sql= "INSERT INTO tecido VALUES (?,?,?,?,1,1);";
+            String sql= "INSERT INTO tecido(nome,disponivel,vendido,id_fonecedor,id_loja) VALUES (?,?,0,?,1)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
-            stmt.setInt(1,id);
-            stmt.setString(2, nome);
-            stmt.setFloat(3,disponivel);
-            stmt.setFloat(4, vendido);
+            stmt.setString(1, nome);
+            stmt.setFloat(2,disponivel);
+            stmt.setInt(3,id_fornecedor);
             stmt.execute();
             stmt.close();
             con.close();
@@ -68,15 +67,16 @@ public class TecidoDAO {
             System.out.println("Erro: "+e.getMessage());
         }
     }
-     public void editarTecido(int id ,String nome, float disponivel,float vendido){
+     public void editarTecido(int id ,String nome, float disponivel,float vendido,int id_fornecedor){
         try{
-            String sql = "update tecido set nome=?, disponivel=?,vendido=? where id=?";
+            String sql = "update tecido set nome=?, disponivel=?,vendido=? ,id_fonecedor=? where idtecido=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setString(1, nome);
             ps.setFloat(2,disponivel);
             ps.setFloat(3, vendido);
-            ps.setInt(4, id);
+            ps.setInt(4,id_fornecedor);
+            ps.setInt(5, id);
             ps.executeUpdate();
         } catch (Exception e){
             System.out.println("Erro:"+e.getMessage());
@@ -85,7 +85,7 @@ public class TecidoDAO {
     }
      public void eliminarTecido(int id){
         try{
-            String sql = "delete tecido where id=?";
+            String sql = "delete from tecido where idtecido=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setInt(1, id);
@@ -94,33 +94,31 @@ public class TecidoDAO {
             System.out.println("Erro:"+e.getMessage());
         }
     }
-     public ArrayList<Tecido> SelecioneTecido(int id,String nome){
+     public Tecido SelecioneTecido(int id){
         ArrayList<Tecido>tecidos = new ArrayList<>();
         Tecido tecido;
         
         
         try{
             Connection con = conexao.getConnection();
-            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from tecido where idtecido=? and nome =?");
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from tecido where idtecido=?");
             stmt.setInt(1,id);
-            stmt.setString(2, nome);
             ResultSet rs = stmt.executeQuery();
-            
            while(rs.next()){
                tecido = new Tecido();
                 tecido.setId(rs.getInt("idtecido"));
                 tecido.setNome(rs.getString("nome"));
                 tecido.setVendido(rs.getFloat("vendido"));
                 tecido.acrescentaTecido(rs.getFloat("disponivel"));
-                //tecido.setIdsa(rs.getInt("id_fonecedor"));
-                //tecido.setIdse(rs.getInt("id_loja"));
+                tecido.setId_fornecedor(rs.getInt("id_fonecedor"));
+                tecido.setId_loja(rs.getInt("id_loja"));
                tecidos.add(tecido);
               
            }
             
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
-        } return tecidos;
+        } return tecidos.get(0);
         
     }
     

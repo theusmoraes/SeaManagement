@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
 
-/**
- *
- * @author Geral
- */
+
 public class CadastroUsuario extends javax.swing.JFrame {
 
     /**
@@ -241,10 +234,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastroUsuario().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CadastroUsuario().setVisible(true);
         });
     }
 

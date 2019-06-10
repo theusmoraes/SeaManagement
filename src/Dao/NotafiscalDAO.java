@@ -5,6 +5,13 @@
  */
 package Dao;
 
+import Model.Maquina;
+import Model.Notafiscal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 /**
  *
  * @author Ronaldo
@@ -16,5 +23,99 @@ public class NotafiscalDAO {
     conexao = new Conexao();
     }
     //insert into notafiscal(idnotafiscal,id_loja,id_produto,id_funcionario) values (1,1,1,1);
-
+public ArrayList<Notafiscal> listaNotafiscal(){
+        ArrayList<Notafiscal>notas = new ArrayList<>();
+        Notafiscal nota;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from notafiscal");
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+               nota= new Notafiscal();
+                nota.setIdnotafiscal(rs.getInt("idnotafiscal"));
+                nota.setId_loja(rs.getInt("id_loja"));
+                nota.setId_produto(rs.getInt("id_produto"));
+                nota.setId_funcionario(rs.getInt("id_funcionario"));
+                
+               notas.add(nota);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return notas;
+        
+    }
+    
+    public void insereNotas(int id_produto, int id_funcionario){
+        String registro = null;
+        try{
+            String sql= "INSERT INTO notafiscal(id_loja,id_produto,id_funcionario) VALUES (1,?,?)";
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+            stmt.setInt(1, id_produto);
+            stmt.setInt(2,id_funcionario);
+            
+            stmt.execute();
+            stmt.close();
+            con.close();
+        }catch(Exception e){
+            System.out.println("Erro: "+e.getMessage());
+        }
+    }
+     public void editarNotas(int id, int id_produto, int id_funcionario){
+        try{
+            String sql = "update notafiscal set id_produto=? ,id_funcionario =? where idnotafiscal=?";
+            Connection conexaobd = conexao.getConnection();
+            PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
+            ps.setInt(1, id_produto);
+            ps.setInt(2,id_funcionario);
+            ps.setInt(3, id);
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println("Erro:"+e.getMessage());
+            
+        }
+    }
+     public void eliminarNota(int id){
+        try{
+            String sql = "delete from notafiscal where idnotafiscal=?";
+            Connection conexaobd = conexao.getConnection();
+            PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }catch(Exception e){
+            System.out.println("Erro:"+e.getMessage());
+        }
+    }
+     public Notafiscal SelecioneNota(int id){
+        ArrayList<Notafiscal>notas = new ArrayList<>();
+        Notafiscal nota;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from notafiscal where idnotafiscal=?");
+            stmt.setInt(1,id);
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+                nota= new Notafiscal();
+                nota.setIdnotafiscal(rs.getInt("idnotafiscal"));
+                nota.setId_loja(rs.getInt("id_loja"));
+                nota.setId_produto(rs.getInt("id_produto"));
+                nota.setId_funcionario(rs.getInt("id_funcionario"));
+                
+               notas.add(nota);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return notas.get(0);
+        
+    }
 }
