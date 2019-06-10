@@ -1,5 +1,6 @@
 
 package Model;
+import View.Perfil;
 
 public class Costureiro extends Empregado{
     
@@ -9,5 +10,12 @@ public class Costureiro extends Empregado{
        }else{
            this.salario *= 1.2;
         }
+        
+    }
+    public void InsereNomePerfil (Perfil perfil,Costureiro costureiro){
+        perfil.txtNome.setText(nome);
+        perfil.txtCPF.setText(cpf);
+        perfil.txtHora.setText(Float.toString(horarioTrabalho));
+        perfil.txtSalario.setText(Float.toString(salario));
     }
 }

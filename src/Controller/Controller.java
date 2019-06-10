@@ -24,10 +24,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Geral
  */
 public class Controller implements ActionListener, KeyListener {
+     Perfil perfil = new Perfil();
      TecidoDAO tecidoDAO = new TecidoDAO();
      FornecedorDAO fornecedorDAO = new FornecedorDAO();
      MaquinaDAO maquinaDAO = new MaquinaDAO();
      ProdutoDAO produtoDAO =new ProdutoDAO();
+     TelaEmpregado empregadoBasico = new TelaEmpregado();
      Login login = new Login();
      Costureiro costureiro = new Costureiro();
      TelaAdimin tela = new TelaAdimin();
@@ -38,6 +40,8 @@ public class Controller implements ActionListener, KeyListener {
      Costureiro cos =new Costureiro();
      CostureiroDAO cosDAO =new CostureiroDAO();
      ArrayList<Adiministrador>adms = new ArrayList<>();
+     Adiministrador subAdm;
+     Costureiro subCos;
      
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
@@ -46,6 +50,7 @@ public class Controller implements ActionListener, KeyListener {
         this.login.BtnSenha.addActionListener(this);
         this.login.brnEntrar.addActionListener(this);
         this.login.setResizable(false);
+        
 
 
 
@@ -66,15 +71,30 @@ public class Controller implements ActionListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent e) {
        if (e.getSource() == login.brnEntrar){
-           
+           e.setSource(null);
            String senha = login.BtnSenha.getText();
            String usuario = login.btnUser.getText();
-           login.setVisible(false);
-           this.tela.btnCadastro.addActionListener(this);
-           this.tela.btnPerfil.addActionListener(this);
-           this.tela.btnHistorico.addActionListener(this);
-           this.tela.btnCadastroResto.addActionListener(this);
-           tela.setVisible(true);
+           Adiministrador subAdm = new Adiministrador();
+           Costureiro subCos = new Costureiro();
+           subAdm= admdao.loginAdm(usuario, senha);
+           subCos =cosDAO.loginCostureiro(usuario, senha);
+           if (subAdm != null) {
+            login.setVisible(false);
+            tela.setVisible(true); 
+            this.tela.btnCadastro.addActionListener(this);
+            this.tela.btnPerfil.addActionListener(this);
+            this.tela.btnHistorico.addActionListener(this);
+            this.tela.btnCadastroResto.addActionListener(this);
+           }else{
+               if (subCos != null){
+                 empregadoBasico.btnPerfil.addActionListener(this);
+                 empregadoBasico.btnRegistro.addActionListener(this);
+                 login.setVisible(false);
+                 subCos.InsereNomePerfil(perfil, subCos);
+                 empregadoBasico.setVisible(true);
+               }
+           }
+           
        }
        if (e.getSource() == tela.btnCadastro){
            this.tela.setVisible(false);
@@ -88,6 +108,7 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastro.txtUser.addActionListener(this);
            this.cadastro.cxAdmin.addActionListener(this);
            this.cadastro.setVisible(true);
+           e.setSource(null);
        }
        if (e.getSource() == cadastro.btnCadastrar){
            String senha = cadastro.passSenha.getText();
@@ -97,6 +118,7 @@ public class Controller implements ActionListener, KeyListener {
            String nome = cadastro.txtNome.getText();
            String cpf = cadastro.txtCpf.getText();
            String horario = cadastro.txtHorario.getText();
+           e.setSource(null);
            if (senha.equals(confirma)){
                if (cadastro.cxAdmin.isSelected()){
                 //JOGA CADA COISA PARA O METODO "AdminDao"
@@ -141,8 +163,11 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastroR.txtQuantTecido.setVisible(false);
            this.cadastroR.txtSegundo.setVisible(false);
            this.cadastroR.txtTerceiro.setVisible(false);
+            e.setSource(null);
+
        }
        if (e.getSource() == cadastroR.btnConfirmaOpcoes ){
+           e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
                prencherListaTecidos(cadastroR.jcTecidos);
                cadastroR.btnConfirmaOpcoes.setVisible(false);
@@ -212,6 +237,7 @@ public class Controller implements ActionListener, KeyListener {
                      cadastroR.tttTerceiro.setVisible(true);
                      cadastroR.btnSalvar.setVisible(true);
                      cadastroR.tttTerceiro.setVisible(true);
+                     cadastroR.tttRegistroTecido1.setText("Registrar novo Produto");
                      cadastroR.tttTerceiro.setText("tipo do Produto");
                      cadastroR.tttSegundo.setText("preço");
                     }else{
@@ -222,6 +248,7 @@ public class Controller implements ActionListener, KeyListener {
            }
        }
        if (e.getSource() == cadastroR.btnSalvar){
+           e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
                String nome = cadastroR.txtNome.getText();
                int id_fornecedor = Integer.parseInt(cadastroR.txtSegundo.getText());
@@ -265,6 +292,14 @@ public class Controller implements ActionListener, KeyListener {
 
            
        }
+       if (e.getSource() == empregadoBasico.btnPerfil){
+           e.setSource(null);
+           System.out.println(perfil.nome);
+           empregadoBasico.setVisible(false);
+           perfil.setVisible(true);
+     
+       }
+               
     }
 
     @Override
