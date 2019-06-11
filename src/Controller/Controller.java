@@ -29,7 +29,9 @@ public class Controller implements ActionListener, KeyListener {
      FornecedorDAO fornecedorDAO = new FornecedorDAO();
      MaquinaDAO maquinaDAO = new MaquinaDAO();
      ProdutoDAO produtoDAO =new ProdutoDAO();
+     HistoricoDeUsoDAO historicoDAO = new HistoricoDeUsoDAO();
      TelaEmpregado empregadoBasico = new TelaEmpregado();
+     TelaEmpregadoRegistro empRegistro = new TelaEmpregadoRegistro();
      Login login = new Login();
      Costureiro costureiro = new Costureiro();
      TelaAdimin tela = new TelaAdimin();
@@ -59,6 +61,14 @@ public class Controller implements ActionListener, KeyListener {
         
         
     }
+     public void prencherListaProdutos (JComboBox box){
+        int numProdutos = produtoDAO.listaProduto().size();
+        int i;
+        box.removeAllItems();
+        for (i=0;i<numProdutos;i++){
+            box.addItem(produtoDAO.listaProduto().get(i).getNome());
+        }
+     }
     public void prencherListaTecidos (JComboBox box){
         int numTecidos = tecidoDAO.listaTecido().size();
         int i;
@@ -110,6 +120,8 @@ public class Controller implements ActionListener, KeyListener {
                  login.setVisible(false);
                  subCos.InsereNomePerfil(perfil, subCos);
                  empregadoBasico.setVisible(true);
+               }else{
+                   JOptionPane.showMessageDialog(null,"Senha ou Usuario errado","Erro de login",JOptionPane.ERROR_MESSAGE);
                }
            }
            
@@ -293,7 +305,7 @@ public class Controller implements ActionListener, KeyListener {
                         String tipoProduto = cadastroR.txtTerceiro.getText();
                         String tipoTecido = (String) cadastroR.jcTecidos.getSelectedItem();
                         int usadaquant = Integer.parseInt(cadastroR.txtQuantTecido.getText());
-                        produtoDAO.insereProduto(nome, preco, tipoProduto, 1, usadaquant);
+                        produtoDAO.insereProduto(nome, preco, tipoProduto, 37, usadaquant);
                         
 //                        produtoDAO.insereProduto(nome, preco, TipoProduto, id_tecido, usadaquant);
                         
@@ -317,7 +329,24 @@ public class Controller implements ActionListener, KeyListener {
            perfil.setVisible(true);
      
        }
-               
+       if (e.getSource() == empregadoBasico.btnRegistro){
+           
+           empregadoBasico.setVisible(false);
+           empRegistro.btnSalvar.addActionListener(this);
+           empRegistro.jcProduto.addActionListener(this);
+           prencherListaProdutos(empRegistro.jcProduto);
+           empRegistro.txHorarioInicio.addActionListener(this);
+           empRegistro.txtHorarioFim.addActionListener(this);
+           empRegistro.txtIdMaquina.addActionListener(this);
+           empRegistro.setVisible(true);
+       }
+       if (e.getSource() == empRegistro.btnSalvar){
+          float horarioIncio = Float.parseFloat(empRegistro.txHorarioInicio.getText());
+          float horarioFim = Float.parseFloat(empRegistro.txtHorarioFim.getText());
+          int idMaquina = Integer.parseInt(empRegistro.txtIdMaquina.getText());
+          
+          
+       }
     }
 
     @Override

@@ -159,7 +159,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         cxAdmin.setBackground(new java.awt.Color(237, 223, 196));
         cxAdmin.setText("O usuario será um administrador");
-        cxAdmin.setActionCommand("O usuario será um administrador");
         jlabel5.add(cxAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -7,12 +7,12 @@ package View;
 
 /**
  *
- * @author Ronaldo
+ * @author Geral
  */
 public class TelaEmpregadoRegistro extends javax.swing.JFrame {
 
     /**
-     * Creates new form registroempre
+     * Creates new form kkkk
      */
     public TelaEmpregadoRegistro() {
         initComponents();
@@ -27,47 +27,24 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jcCadastros = new javax.swing.JComboBox();
-        tttAdicionarTecidos = new javax.swing.JLabel();
-        btnConfirmaOpcoes = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         jlabel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        pngRodinha5 = new javax.swing.JLabel();
         txtRegistro = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        RegistroProdutojTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        RegistroIDmaquinajTextField2 = new javax.swing.JTextField();
-        RegistroIDmaquinajTextField3 = new javax.swing.JTextField();
-        RegistroIDmaquinajTextField4 = new javax.swing.JTextField();
-        RegistroProdutojTextField2 = new javax.swing.JTextField();
-        RegistroProdutojTextField3 = new javax.swing.JTextField();
-        RegistroProdutojTextField4 = new javax.swing.JTextField();
-        RegistroProdutojTextField5 = new javax.swing.JTextField();
+        txHorarioInicio = new javax.swing.JTextField();
+        txtHorarioFim = new javax.swing.JTextField();
+        txtIdMaquina = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        RegistroProdutojTextField6 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-
-        jcCadastros.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Selecione uma das opções de cadastro>", "Fornecedor", "Produto", "Tecido", "Maquina" }));
-        jcCadastros.setToolTipText("");
-
-        tttAdicionarTecidos.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        tttAdicionarTecidos.setForeground(new java.awt.Color(54, 31, 37));
-        tttAdicionarTecidos.setText("Adicionar Tecidos");
-
-        btnConfirmaOpcoes.setText("Confirmar");
-        btnConfirmaOpcoes.setActionCommand("");
+        btnSalvar = new javax.swing.JButton();
+        jcProduto = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,32 +56,17 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pngRodinha5, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 244, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(184, 184, 184)
-                .addComponent(pngRodinha5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 691, Short.MAX_VALUE)
         );
 
         txtRegistro.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        txtRegistro.setText("Registro");
+        txtRegistro.setText("Registro Diario");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
-
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel6.setText("Preço");
-
-        RegistroProdutojTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel5.setText("Horario inicial");
@@ -112,73 +74,42 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel8.setText("Horario final");
 
-        RegistroIDmaquinajTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txHorarioInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroIDmaquinajTextField2ActionPerformed(evt);
+                txHorarioInicioActionPerformed(evt);
             }
         });
 
-        RegistroIDmaquinajTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtHorarioFim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroIDmaquinajTextField3ActionPerformed(evt);
+                txtHorarioFimActionPerformed(evt);
             }
         });
 
-        RegistroIDmaquinajTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtIdMaquina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroIDmaquinajTextField4ActionPerformed(evt);
+                txtIdMaquinaActionPerformed(evt);
             }
         });
 
-        RegistroProdutojTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField2ActionPerformed(evt);
-            }
-        });
-
-        RegistroProdutojTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField3ActionPerformed(evt);
-            }
-        });
-
-        RegistroProdutojTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField4ActionPerformed(evt);
-            }
-        });
-
-        RegistroProdutojTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField5ActionPerformed(evt);
+                txtIDActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel7.setText("id da maquina ");
 
-        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel9.setText("Nome do produto");
-
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel10.setText("Tipo do produto");
-
-        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel11.setText("Quantidade do tecido");
-
-        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel12.setText("id do tecido usado");
-
-        RegistroProdutojTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProdutojTextField6ActionPerformed(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel13.setText("seu ID ");
 
-        jButton1.setText("Salvar");
+        btnSalvar.setText("Salvar");
+
+        jcProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Selecione um Produto" }));
+
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel9.setText("Produto Fabricado");
 
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
@@ -186,80 +117,45 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(434, 434, 434)
-                        .addComponent(jLabel2)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtIdMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(112, 112, 112)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addComponent(RegistroProdutojTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txHorarioInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHorarioFim, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                                .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(78, 78, 78)
+                                .addComponent(jLabel1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(216, 216, 216))))
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(jlabel2Layout.createSequentialGroup()
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6)
-                                .addGap(323, 323, 323))
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(RegistroIDmaquinajTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(RegistroIDmaquinajTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel8)))
-                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jlabel2Layout.createSequentialGroup()
-                                        .addGap(157, 157, 157)
-                                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                                .addComponent(RegistroProdutojTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(292, 292, 292))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel11)
-                                                        .addComponent(jLabel12)
-                                                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(jLabel9)
-                                                            .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(RegistroProdutojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(jLabel10)))))
-                                                .addGap(49, 49, 49)
-                                                .addComponent(jLabel1))))
-                                    .addGroup(jlabel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel4)
-                                                .addGap(136, 136, 136))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                                .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap())
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                                .addComponent(RegistroProdutojTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(290, 290, 290))))))
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(RegistroProdutojTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(RegistroProdutojTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(284, 284, 284))))))
-            .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jlabel2Layout.createSequentialGroup()
-                    .addGap(284, 284, 284)
-                    .addComponent(RegistroIDmaquinajTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(486, Short.MAX_VALUE)))
-            .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jlabel2Layout.createSequentialGroup()
-                    .addGap(284, 284, 284)
-                    .addComponent(jLabel7)
-                    .addContainerGap(575, Short.MAX_VALUE)))
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel13))
+                            .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,137 +163,73 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtRegistro)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addGap(23, 23, 23)
-                                .addComponent(RegistroProdutojTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6))))
+                        .addGap(35, 35, 35)
+                        .addComponent(txtRegistro))
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel4)))
-                .addGap(6, 6, 6)
-                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(RegistroProdutojTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RegistroProdutojTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(RegistroIDmaquinajTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(RegistroProdutojTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel5)
-                        .addGap(28, 28, 28)
-                        .addComponent(RegistroIDmaquinajTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel4))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtIdMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(RegistroProdutojTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RegistroProdutojTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)))
+                .addComponent(txHorarioInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtHorarioFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(53, 53, 53)
                 .addComponent(jLabel3))
-            .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jlabel2Layout.createSequentialGroup()
-                    .addGap(186, 186, 186)
-                    .addComponent(RegistroIDmaquinajTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(999, Short.MAX_VALUE)))
-            .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jlabel2Layout.createSequentialGroup()
-                    .addGap(147, 147, 147)
-                    .addComponent(jLabel7)
-                    .addContainerGap(536, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegistroProdutojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField1ActionPerformed
+    private void txHorarioInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHorarioInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField1ActionPerformed
+    }//GEN-LAST:event_txHorarioInicioActionPerformed
 
-    private void RegistroIDmaquinajTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroIDmaquinajTextField2ActionPerformed
+    private void txtHorarioFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorarioFimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroIDmaquinajTextField2ActionPerformed
+    }//GEN-LAST:event_txtHorarioFimActionPerformed
 
-    private void RegistroIDmaquinajTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroIDmaquinajTextField3ActionPerformed
+    private void txtIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdMaquinaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroIDmaquinajTextField3ActionPerformed
+    }//GEN-LAST:event_txtIdMaquinaActionPerformed
 
-    private void RegistroIDmaquinajTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroIDmaquinajTextField4ActionPerformed
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroIDmaquinajTextField4ActionPerformed
-
-    private void RegistroProdutojTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField2ActionPerformed
-
-    private void RegistroProdutojTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField3ActionPerformed
-
-    private void RegistroProdutojTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField4ActionPerformed
-
-    private void RegistroProdutojTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField5ActionPerformed
-
-    private void RegistroProdutojTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProdutojTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegistroProdutojTextField6ActionPerformed
+    }//GEN-LAST:event_txtIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -436,36 +268,23 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField RegistroIDmaquinajTextField2;
-    public javax.swing.JTextField RegistroIDmaquinajTextField3;
-    public javax.swing.JTextField RegistroIDmaquinajTextField4;
-    public javax.swing.JTextField RegistroProdutojTextField1;
-    public javax.swing.JTextField RegistroProdutojTextField2;
-    public javax.swing.JTextField RegistroProdutojTextField3;
-    public javax.swing.JTextField RegistroProdutojTextField4;
-    public javax.swing.JTextField RegistroProdutojTextField5;
-    public javax.swing.JTextField RegistroProdutojTextField6;
-    public javax.swing.JButton btnConfirmaOpcoes;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    public javax.swing.JComboBox jcCadastros;
+    public javax.swing.JComboBox jcProduto;
     private javax.swing.JPanel jlabel2;
-    public javax.swing.JLabel pngRodinha5;
-    public javax.swing.JLabel tttAdicionarTecidos;
+    public javax.swing.JTextField txHorarioInicio;
+    public javax.swing.JTextField txtHorarioFim;
+    public javax.swing.JTextField txtID;
+    public javax.swing.JTextField txtIdMaquina;
     public javax.swing.JLabel txtRegistro;
     // End of variables declaration//GEN-END:variables
 }

@@ -127,7 +127,7 @@ public class Cadastro extends javax.swing.JFrame {
         tttAdicionarTecidos.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         tttAdicionarTecidos.setForeground(new java.awt.Color(54, 31, 37));
         tttAdicionarTecidos.setText("Adicionar Tecidos");
-        jlabel6.add(tttAdicionarTecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 270, 30));
+        jlabel6.add(tttAdicionarTecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 340, 30));
 
         tttRegistroTecido1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         tttRegistroTecido1.setForeground(new java.awt.Color(54, 31, 37));
