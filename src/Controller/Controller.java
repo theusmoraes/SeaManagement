@@ -47,6 +47,8 @@ public class Controller implements ActionListener, KeyListener {
      Notafiscal notafiscal=new Notafiscal();
      NotafiscalDAO notafiscalDAO=new NotafiscalDAO();
      ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
+     AdmHistorico his = new AdmHistorico();
+     
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -58,8 +60,22 @@ public class Controller implements ActionListener, KeyListener {
 
 
 
-        
-        
+           }
+    public void preencheTabela(JTable tabela){
+        DefaultTableModel tabelinha = new DefaultTableModel();
+        tabelinha.addColumn("Id");
+        tabelinha.addColumn("Nome");
+        tabelinha.addColumn("Nick");
+        Object [] coluna  = new Object[3];
+        int numRegistros = tecidoDAO.listaTecido().size();
+        for(int i = 0; i<numRegistros; i++){
+            coluna [0] = tecidoDAO.listaTecido().get(i).getId();
+            coluna [1] = tecidoDAO.listaTecido().get(i).getNome();
+            coluna [1] = tecidoDAO.listaTecido().get(i).getDisponivel();
+            tabelinha.addRow(coluna);
+        }
+        tabela.setModel(tabelinha);
+
     }
      public void prencherListaProdutos (JComboBox box){
         int numProdutos = produtoDAO.listaProduto().size();
@@ -77,23 +93,7 @@ public class Controller implements ActionListener, KeyListener {
             box.addItem(tecidoDAO.listaTecido().get(i).getNome());
         }
             
-        
-    }
-    public void preencheTabela(JTable tabela){
-        DefaultTableModel tabelinha = new DefaultTableModel();
-        tabela.setModel(tabelinha);
-        tabelinha.addColumn("Id");
-        tabelinha.addColumn("Produto");
-        tabelinha.addColumn("Funcionario");
-        
-        Object [] coluna  = new Object[3];
-        int numRegistros = notafiscalDAO.listaNotafiscal().size();
-        for(int i = 0; i<numRegistros; i++){
-            coluna [0] = notafiscalDAO.listaNotafiscal().get(i).getIdnotafiscal();
-            coluna[1] = notafiscalDAO.listaNotafiscal().get(i).getProduto().getNome();
-            coluna[2] = notafiscalDAO.listaNotafiscal().get(i).getFuncionario().getNome();
-            tabelinha.addRow(coluna);
-        }
+ 
     }
  
     @Override
@@ -196,6 +196,11 @@ public class Controller implements ActionListener, KeyListener {
             e.setSource(null);
 
        }
+        if (e.getSource() == tela.btnHistorico) {
+            tela.setVisible(false);
+            his.setVisible(true);
+            
+        }
        if (e.getSource() == cadastroR.btnConfirmaOpcoes ){
            e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
@@ -338,12 +343,15 @@ public class Controller implements ActionListener, KeyListener {
            empRegistro.txHorarioInicio.addActionListener(this);
            empRegistro.txtHorarioFim.addActionListener(this);
            empRegistro.txtIdMaquina.addActionListener(this);
+           empRegistro.txtID.addActionListener(this);
            empRegistro.setVisible(true);
        }
        if (e.getSource() == empRegistro.btnSalvar){
-          float horarioIncio = Float.parseFloat(empRegistro.txHorarioInicio.getText());
-          float horarioFim = Float.parseFloat(empRegistro.txtHorarioFim.getText());
+          String horarioIncio = empRegistro.txHorarioInicio.getText();
+          String horarioFim = (empRegistro.txtHorarioFim.getText());
           int idMaquina = Integer.parseInt(empRegistro.txtIdMaquina.getText());
+          int idUsuario = Integer.parseInt(empRegistro.txtID.getText());
+          historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario);
           
           
        }
