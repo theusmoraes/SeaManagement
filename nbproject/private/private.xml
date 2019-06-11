@@ -3,29 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Costureiro.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/FornecedorDAO.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/SeaManegement.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/TelaAdimin.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Produto.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Adiministrador.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/TecidoDAO.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Fornecedor.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/Conexao.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/TelaEmpregado.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/Login.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Empregado.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/CadastroUsuario.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/MaquinaDAO.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Tecido.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Maquina.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Imagens/Papelzinho%20original.png</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/AdmDAO.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/Cadastro.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Estoque.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/HistoricoDeUso.java</file>
-            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/CostureiroDAO.java</file>
+            <file>file:/C:/Users/ronal/OneDrive/Documentos/programa%20para%20quarta%20q%20vem/SeaManagement/src/Dao/TecidoDAO.java</file>
+            <file>file:/C:/Users/ronal/OneDrive/Documentos/programa%20para%20quarta%20q%20vem/SeaManagement/src/Controller/Controller.java</file>
+            <file>file:/C:/Users/ronal/OneDrive/Documentos/programa%20para%20quarta%20q%20vem/SeaManagement/src/Model/SeaManegement.java</file>
+            <file>file:/C:/Users/ronal/OneDrive/Documentos/programa%20para%20quarta%20q%20vem/SeaManagement/src/View/AdmHistorico.java</file>
+            <file>file:/C:/Users/ronal/OneDrive/Documentos/programa%20para%20quarta%20q%20vem/SeaManagement/src/Model/HistoricoDeUso.java</file>
         </group>
     </open-files>
 </project-private>

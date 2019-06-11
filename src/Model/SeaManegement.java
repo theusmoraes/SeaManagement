@@ -14,16 +14,16 @@ import java.util.ArrayList;
 public class SeaManegement {
 
     public static void main(String[] args) {
-        Login log = new Login();
+       /* Login log = new Login();
         log.setVisible(true);
         Costureiro cost = new Costureiro();
         Controller control = new Controller(log, cost);
        log.setVisible(true);
        log.setLocationRelativeTo(null);
-                                
+        */                        
        
        
-        /*
+        
         
         // fornecedor
         ArrayList<Fornecedor>fornecedores = new ArrayList<>();
@@ -44,17 +44,27 @@ public class SeaManegement {
          ArrayList<HistoricoDeUso>historicos = new ArrayList<>();
         HistoricoDeUsoDAO historicodao =new HistoricoDeUsoDAO();
         HistoricoDeUso historico =new HistoricoDeUso();
+        Historico2 his =new Historico2();
         //historicodao.insereHistorico("8;10", "9;10", 1, 1);
-        historicodao.eliminarHistorico(2);
-        //historicos=historicodao.listaHistoricoDeUso();
-       //System.out.println("Model.SeaManegement.main()"+historicos.get(1).getHoraInicio());
+       // historicodao.eliminarHistorico(2);
+        historicos=his.historicoMaquinaFunci();
+        for (int i = 0; i < historicos.size(); i++) {
+            
+       System.out.println("Model.SeaManegement.main()"+historicos.get(i).getCostureiro().getNome());
+       
+       System.out.println("Model.SeaManegement.main()"+historicos.get(i).getMaquina().getNome());
+       
+       
+       
+            
+        }
         
         // maquina
         ArrayList<Maquina>maquinas = new ArrayList<>();
         MaquinaDAO Macdao =new MaquinaDAO();
         Maquina Mac =new Maquina();
        // Macdao.editarMaquina(2,"l12d", "piu", "dia 1");
-        maquinas=Macdao.listaMaquina();
+       // maquinas=Macdao.listaMaquina();
        // System.out.println("Model.SeaManegement.main()"+maquinas.get(1).getNome());
         
         //nota fiscal
