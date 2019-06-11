@@ -56,7 +56,7 @@ public class AdmDAO {
     public void insereAdm(float cpf,String nome,String usuario,String senha, float salario, float horarioTrabalho){
         String registro = null;
         try{
-            String sql= "INSERT INTO adm(cpf,nome,usuario,senha,salario,horarioTrabalho,id_loja VALUES (?,?,?,?,?,?,1)";
+            String sql= "INSERT INTO adm(cpf,nome,usuario,senha,salario,horarioTrabalho,id_loja) VALUES (?,?,?,?,?,?,1)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setFloat(1, cpf);

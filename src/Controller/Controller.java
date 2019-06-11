@@ -13,17 +13,25 @@ import Dao.*;
 import View.*;
 import Model.*;
 import Dao.*;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
  * @author Geral
  */
 public class Controller implements ActionListener, KeyListener {
+     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
      Perfil perfil = new Perfil();
      TecidoDAO tecidoDAO = new TecidoDAO();
      FornecedorDAO fornecedorDAO = new FornecedorDAO();
@@ -48,7 +56,7 @@ public class Controller implements ActionListener, KeyListener {
      NotafiscalDAO notafiscalDAO=new NotafiscalDAO();
      ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
      AdmHistorico his = new AdmHistorico();
-     
+     AdmRelatorio relatorio = new AdmRelatorio();
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -140,6 +148,27 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastro.setVisible(true);
            e.setSource(null);
        }
+        if (e.getSource() == tela.btnPerfil) {
+            tela.setVisible(false);
+            dataset.setValue(50, "", "Janeiro");
+            dataset.setValue(60, "", "Fevereiro");
+            dataset.setValue(40, "", "Março");
+            dataset.setValue(90, "", "Abril");
+            /*JFreeChart chart = ChartFactory.createBarChart("", "", "", dataset, PlotOrientation.HORIZONTAL,false,false,false);
+            CategoryPlot catPlot = chart.getCategoryPlot();
+            catPlot.setRangeGridlinePaint(Color.BLACK);*/
+            
+            JFreeChart chart = ChartFactory.createLineChart("Teste grafico", "Mes", "Vendas", dataset,
+                    PlotOrientation.VERTICAL, true,true,false);
+            ChartPanel chartPanel = new ChartPanel(chart);
+            relatorio.jGrafico.removeAll();
+            relatorio.jGrafico.add(chartPanel,BorderLayout.CENTER);
+            relatorio.jGrafico.validate();
+            relatorio.setVisible(true);
+
+            
+        }
+       
        if (e.getSource() == cadastro.btnCadastrar){
            String senha = cadastro.passSenha.getText();
            String confirma = cadastro.passConfirma.getText();
@@ -154,7 +183,6 @@ public class Controller implements ActionListener, KeyListener {
                 //JOGA CADA COISA PARA O METODO "AdminDao"
 
                 admdao.insereAdm( Float.parseFloat(cpf), nome, user, senha, Float.parseFloat(salario), Float.parseFloat(horario));
-                   System.out.println("a");
 
                }else{
                 //JOGA CADA COISA PARA O METODO "CostureiroDAO"
@@ -310,7 +338,8 @@ public class Controller implements ActionListener, KeyListener {
                         String tipoProduto = cadastroR.txtTerceiro.getText();
                         String tipoTecido = (String) cadastroR.jcTecidos.getSelectedItem();
                         int usadaquant = Integer.parseInt(cadastroR.txtQuantTecido.getText());
-                        produtoDAO.insereProduto(nome, preco, tipoProduto, 37, usadaquant);
+                         int idProduto = produtoDAO.SelecioneIdProduto(nome);
+                        produtoDAO.insereProduto(nome, preco, tipoProduto, idProduto, usadaquant);
                         
 //                        produtoDAO.insereProduto(nome, preco, TipoProduto, id_tecido, usadaquant);
                         
@@ -321,7 +350,9 @@ public class Controller implements ActionListener, KeyListener {
            tela.setVisible(true);
        }
        if (e.getSource() == cadastroR.btnAdicionar){
+         String nome_tecido = (String) cadastroR.jcTecidos.getSelectedItem();
          int quantidade_tecido = Integer.parseInt(cadastroR.txtQuantTecido.getText());
+         
          cadastroR.setVisible(false);
          tela.setVisible(true);
 

@@ -44,6 +44,8 @@ public class HistoricoDeUsoDAO {
                 historico.setIdHistoricodeuso(rs.getInt("idHistoricodeuso"));
                 historico.setHoraInicio(rs.getString("horarioinicial"));
                 historico.setHoraFinal(rs.getString("horariofinal"));
+                historico.setId_maquina(rs.getInt("id_maquina"));
+                historico.setId_costureiro(rs.getInt("id_funcionario"));
                 
              historicos.add(historico);
               
@@ -121,7 +123,8 @@ public class HistoricoDeUsoDAO {
                 historico.setIdHistoricodeuso(rs.getInt("idHistoricodeuso"));
                 historico.setHoraInicio(rs.getString("horarioinicial"));
                 historico.setHoraFinal(rs.getString("horariofinal"));
-              
+              historico.setId_maquina(rs.getInt("id_maquina"));
+                historico.setId_costureiro(rs.getInt("id_funcionario"));
              historicos.add(historico);
               
            }

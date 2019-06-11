@@ -157,15 +157,15 @@ public class ProdutoDAO {
         } return produtos.get(0);
         
     }
-     public String SelecioneNomeProduto(int id){
+     public int SelecioneIdProduto(String nome){
         ArrayList<Produto>produtos = new ArrayList<>();
         Produto produto;
         
         
         try{
             Connection con = conexao.getConnection();
-            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produto where idproduto=?");
-            stmt.setInt(1,id);
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produto where nome=?");
+            stmt.setString(1,nome);
             ResultSet rs = stmt.executeQuery();
             
            while(rs.next()){
@@ -183,7 +183,7 @@ public class ProdutoDAO {
             
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
-        } return produtos.get(0).getNome();
+        } return produtos.get(0).getIdproduto();
         
     }
 }
