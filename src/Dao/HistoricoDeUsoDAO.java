@@ -44,12 +44,7 @@ public class HistoricoDeUsoDAO {
                 historico.setIdHistoricodeuso(rs.getInt("idHistoricodeuso"));
                 historico.setHoraInicio(rs.getString("horarioinicial"));
                 historico.setHoraFinal(rs.getString("horariofinal"));
-                maquina= new Maquina();
-                maquina= Mac.SelecioneMaquina(rs.getInt("id_maquina"));
-                historico.setMaquina(maquina);
-               costureiro = new Costureiro(); 
-               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
-               historico.setCostureiro(costureiro);
+                
              historicos.add(historico);
               
            }
@@ -126,12 +121,7 @@ public class HistoricoDeUsoDAO {
                 historico.setIdHistoricodeuso(rs.getInt("idHistoricodeuso"));
                 historico.setHoraInicio(rs.getString("horarioinicial"));
                 historico.setHoraFinal(rs.getString("horariofinal"));
-                maquina= new Maquina();
-                maquina= Mac.SelecioneMaquina(rs.getInt("id_maquina"));
-                historico.setMaquina(maquina);
-               costureiro = new Costureiro(); 
-               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
-               historico.setCostureiro(costureiro);
+              
              historicos.add(historico);
               
            }

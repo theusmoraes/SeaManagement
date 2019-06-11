@@ -44,10 +44,6 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
-                costureiro = new Costureiro(); 
-               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
-               produto = new Produto();
-               produto= prodao.SelecioneProduto(rs.getInt("id_produto"));
                 
                notas.add(nota);
               
@@ -119,11 +115,7 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
-                costureiro = new Costureiro(); 
-               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
-               produto = new Produto();
-               produto= prodao.SelecioneProduto(rs.getInt("id_produto"));
-               nota.setFuncionario(costureiro);
+                
                notas.add(nota);
               
            }
