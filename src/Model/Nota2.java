@@ -26,9 +26,10 @@ public class Nota2 {
         Costureiro costureiro = new Costureiro(); 
         Produto produto = new Produto();
                
-        produtos=prodao.listaProduto();
+        produtos=prodao.listaProdutoDeletado();
         costureiros=cosdao.listaTecido();
         notas=notaDAO.listaNotafiscal();
+       
         
          for (int i = 0; i < notas.size(); i++) {
              for (int j = 0; j < costureiros.size(); j++) {
@@ -50,17 +51,20 @@ public class Nota2 {
             
              
          }
-         for (int i = 0; i < notas.size(); i++) {
+        for (int i = 0; i < notas.size(); i++) {
+         
              for (int j = 0; j < produtos.size(); j++) {
                  
-             if(notas.get(i).getId_produto()==produtos.get(j).getIdproduto()){
+             if(notas.get(i).getId_produto() == produtos.get(j).getIdproduto()){
+                  
                  produto = new Produto();
-                 produto.setId_loja(produtos.get(j).getId_loja());
-                  produto.setId_tecido(produtos.get(j).getId_tecido());
                   produto.setIdproduto(produtos.get(j).getIdproduto());
+                    produto.setId_loja(produtos.get(j).getId_loja());
+                  produto.setId_tecido(produtos.get(j).getId_tecido());
                   produto.setNome(produtos.get(j).getNome());
                   produto.setTipoproduto(produtos.get(j).getTipoproduto());
                   produto.setUsadaquant(produtos.get(j).getUsadaquant());
+                  produto.setPreco(produtos.get(j).getPreco());
                 notas.get(i).setProduto(produto);
                  
              }

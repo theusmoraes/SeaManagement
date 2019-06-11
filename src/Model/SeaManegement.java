@@ -23,8 +23,8 @@ public class SeaManegement {
                                 
        
        
-        /*
         
+        /*
         // fornecedor
         ArrayList<Fornecedor>fornecedores = new ArrayList<>();
         FornecedorDAO FORdao =new FornecedorDAO();
@@ -48,16 +48,16 @@ public class SeaManegement {
         //historicodao.insereHistorico("8;10", "9;10", 1, 1);
        // historicodao.eliminarHistorico(2);
         historicos=his.historicoMaquinaFunci();
-        for (int i = 0; i < historicos.size(); i++) {
+        //for (int i = 0; i < historicos.size(); i++) {
             
-       System.out.println("Model.SeaManegement.main()"+historicos.get(i).getCostureiro().getNome());
+      //System.out.println("nome"+historicos.get(i).getCostureiro().getNome()+"\nnome"+historicos.get(i).getMaquina().getNome());
        
-       System.out.println("Model.SeaManegement.main()"+historicos.get(i).getMaquina().getNome());
+       
        
        
        
             
-        }
+       // }
         
         // maquina
         ArrayList<Maquina>maquinas = new ArrayList<>();
@@ -71,9 +71,14 @@ public class SeaManegement {
         ArrayList<Notafiscal>notas = new ArrayList<>();
         NotafiscalDAO notafiscaldao= new NotafiscalDAO();
         Notafiscal notafiscal= new Notafiscal();
+        Nota2 nota2 = new Nota2();
         //notafiscaldao.editarNotas(1,2, 1);
-        //notas=notafiscaldao.listaNotafiscal();
-        //System.out.println("Model.SeaManegement.main()"+notas.get(1).getIdnotafiscal());
+        notas=nota2.notaFiscalComcostureiroeProduto();
+      // for (int i = 0; i < notas.size(); i++) {
+            
+        //System.out.println("Model.SeaManegement.main()"+notas.get(i).getProduto().getNome());
+            
+       // }
         //PROduto
         ArrayList<Produto>produtos = new ArrayList<>();
         ProdutoDAO produtodao = new ProdutoDAO();
@@ -96,6 +101,25 @@ public class SeaManegement {
         //produtodao.eliminarProduto(2);
        //tecidodao.eliminarTecido(2);
        
+       // TECIDO
+     /*   ArrayList<Tecido>tecidos = new ArrayList<>();
+        TecidoDAO tecidodao = new TecidoDAO();
+        Tecido tecido = new Tecido();
+        tecido = tecidodao.SelecioneTecidoNome("linho");
+        //tecidos=tecidodao.listaTecido();
+        System.out.println("Model.SeaManegement.main()"+tecido.getDisponivel());
+        
+        
+        tecido.acrescentaTecido(20);
+        tecidodao.editarTecidoPassandoTecido(tecido);
+       tecido = tecidodao.SelecioneTecidoNome("linho");
+       System.out.println("Model.SeaManegement.main()"+tecido.getDisponivel());
+       */
+     
+       
+     
+     
+     
     }
     
 }

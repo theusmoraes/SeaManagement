@@ -51,11 +51,11 @@ public Tecido(){
         this.nome = nome;
     }
 
-    public void acrescentaTecido(Float disponivel) {
-        this.disponivel += disponivel;
+    public void acrescentaTecido(double novo) {
+        this.disponivel += novo;
     }
-    public void decrescentaTecido(Float disponivel){
-        this.disponivel -= disponivel;
+    public void decrescentaTecido(double novo){
+        this.disponivel -= novo;
     }
 
     public void setVendido(float vendido) {

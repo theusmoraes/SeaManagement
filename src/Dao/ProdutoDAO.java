@@ -186,4 +186,33 @@ public class ProdutoDAO {
         } return produtos.get(0).getIdproduto();
         
     }
+     public ArrayList<Produto> listaProdutoDeletado(){
+        ArrayList<Produto>produtos = new ArrayList<>();
+        Produto produto;
+        
+        // insert into produto(nome,preco,tipoproduto,id_tecido,usadaquant,id_loja) values ("calça",49.99,"moletom",1,12,1);
+
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produtodeletado");
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+               produto= new Produto();
+                produto.setIdproduto(rs.getInt("idproduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setTipoproduto(rs.getString("tipoproduto"));
+                produto.setId_tecido(rs.getInt("id_tecido"));
+                produto.setUsadaquant(rs.getFloat("usadaquant"));
+                produto.setId_loja(rs.getInt("id_loja"));
+               produtos.add(produto);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return produtos;
+        
+    }
 }
