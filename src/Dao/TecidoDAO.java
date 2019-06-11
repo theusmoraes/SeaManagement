@@ -129,7 +129,7 @@ public class TecidoDAO {
         
         try{
             Connection con = conexao.getConnection();
-            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from tecido where idtecido=?");
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from tecido where nome=?");
             stmt.setString(1,nome);
             ResultSet rs = stmt.executeQuery();
            while(rs.next()){

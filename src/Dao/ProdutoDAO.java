@@ -99,7 +99,7 @@ public class ProdutoDAO {
             System.out.println("Erro:"+e.getMessage());
         }
     }
-     public Produto SelecioneProduto(int id){
+     public Produto SelecioneProdutopeloiD(int id){
         ArrayList<Produto>produtos = new ArrayList<>();
         Produto produto;
         
@@ -126,6 +126,64 @@ public class ProdutoDAO {
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
         } return produtos.get(0);
+        
+    }
+     public Produto SelecioneProdutopeloNome(String id){
+        ArrayList<Produto>produtos = new ArrayList<>();
+        Produto produto;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produto where nome=?");
+            stmt.setString(1,id);
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+               produto= new Produto();
+                produto.setIdproduto(rs.getInt("idproduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setTipoproduto(rs.getString("tipoproduto"));
+                produto.setId_tecido(rs.getInt("id_tecido"));
+                produto.setUsadaquant(rs.getFloat("usadaquant"));
+                produto.setId_loja(rs.getInt("id_loja"));
+               produtos.add(produto);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return produtos.get(0);
+        
+    }
+     public String SelecioneNomeProduto(int id){
+        ArrayList<Produto>produtos = new ArrayList<>();
+        Produto produto;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produto where idproduto=?");
+            stmt.setInt(1,id);
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+               produto= new Produto();
+                produto.setIdproduto(rs.getInt("idproduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setTipoproduto(rs.getString("tipoproduto"));
+                produto.setId_tecido(rs.getInt("id_tecido"));
+                produto.setUsadaquant(rs.getFloat("usadaquant"));
+                produto.setId_loja(rs.getInt("id_loja"));
+               produtos.add(produto);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return produtos.get(0).getNome();
         
     }
 }
