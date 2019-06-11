@@ -11,6 +11,7 @@ import Dao.ProdutoDAO;
 import Dao.TecidoDAO;
 import View.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class SeaManegement {
 
     public static void main(String[] args) {
@@ -115,11 +116,23 @@ public class SeaManegement {
        tecido = tecidodao.SelecioneTecidoNome("linho");
        System.out.println("Model.SeaManegement.main()"+tecido.getDisponivel());
        */
-     
-       
-     
-     
-     
+     /*ArrayList<HistoricoDeUso>historics = new ArrayList<>();
+                Historico2 his =new Historico2();
+                historics=his.historicoMaquinaFunci();
+       //String vamos= "id: "+historics.get(0).getIdHistoricodeuso()+"\nmaquina: "+historics.get(0).getMaquina().getNome()+"\nfuncionario: "+historics.get(0).getCostureiro().getNome()+"";
+       String vamos="";
+        for (int i = 0; i < historics.size(); i++) {
+            
+               String vamos2="\nid: "+historics.get(i).getIdHistoricodeuso()+"\nmaquina: "+historics.get(i).getMaquina().getNome()+"\nfuncionario: "+historics.get(i).getCostureiro().getNome()+"";
+            
+            vamos= vamos.concat(vamos2);
+        }
+               
+     // String s = "Strings are immutable";
+     // s = s.concat(" all the time");
+        JOptionPane.showMessageDialog(null,vamos);
+     // System.out.println(vamos);
+  */
     }
     
 }

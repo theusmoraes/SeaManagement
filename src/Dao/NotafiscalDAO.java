@@ -122,7 +122,7 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                notas.add(nota);
               
            }
-            
+            //foi
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
         } return notas.get(0);

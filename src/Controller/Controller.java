@@ -45,6 +45,8 @@ public class Controller implements ActionListener, KeyListener {
      Notafiscal notafiscal=new Notafiscal();
      NotafiscalDAO notafiscalDAO=new NotafiscalDAO();
      ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
+     AdmHistorico AdmHistorico = new AdmHistorico();
+     
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -264,7 +266,7 @@ public class Controller implements ActionListener, KeyListener {
                   }  
                }       
            }
-       }
+       }     
        if (e.getSource() == cadastroR.btnSalvar){
            e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
@@ -303,8 +305,43 @@ public class Controller implements ActionListener, KeyListener {
            cadastroR.setVisible(false);
            tela.setVisible(true);
        }
+       if (e.getSource() == tela.btnHistorico){
+           tela.setVisible(false);
+           AdmHistorico.setVisible(true);
+           this.AdmHistorico.jButtonHistoricodevendas.addActionListener(this);
+          
+         
+            e.setSource(null);
+            
+                
+       }
+       if (e.getSource() == AdmHistorico.jButtonHistoricodevendas){
+                ArrayList<HistoricoDeUso>historics = new ArrayList<>();
+                Historico2 his =new Historico2();
+                historics=his.historicoMaquinaFunci();
+                
+                String vamos="";
+        for (int i = 0; i < historics.size(); i++) {
+            
+               String vamos2="\nid: "+historics.get(i).getIdHistoricodeuso()+"\nmaquina: "+historics.get(i).getMaquina().getNome()+"\nfuncionario: "+historics.get(i).getCostureiro().getNome()+"";
+            
+            vamos= vamos.concat(vamos2);
+        }
+               
+     // String s = "Strings are immutable";
+     // s = s.concat(" all the time");
+        JOptionPane.showMessageDialog(null,vamos);
+     // System.out.println(vamos);
+                e.setSource(null);
+       }
        if (e.getSource() == cadastroR.btnAdicionar){
+           String nome_tecido = (String) cadastroR.jcTecidos.getSelectedItem();
          int quantidade_tecido = Integer.parseInt(cadastroR.txtQuantTecido.getText());
+         Tecido tecronaldo =new    Tecido();
+         TecidoDAO tecronaldodao = new TecidoDAO();
+         tecronaldo = tecronaldodao.SelecioneTecidoNome(nome_tecido);
+        tecronaldo.acrescentaTecido(quantidade_tecido);
+        tecronaldodao.editarTecidoPassandoTecido(tecronaldo);
          cadastroR.setVisible(false);
          tela.setVisible(true);
 

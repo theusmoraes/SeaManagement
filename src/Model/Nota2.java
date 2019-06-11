@@ -44,6 +44,7 @@ public class Nota2 {
                  costureiro.setSenha(costureiros.get(j).getSenha());
                  costureiro.setUsuario(costureiros.get(j).getUsuario());
                 notas.get(i).setFuncionario(costureiro);
+                
                  
              }
                  

@@ -43,8 +43,7 @@ public class AdmHistorico extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtHistorico = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jButtonHistoricodevendas = new javax.swing.JButton();
 
         jtDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,19 +86,6 @@ public class AdmHistorico extends javax.swing.JFrame {
         txtHistorico.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         txtHistorico.setText("Historico de vendas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "id", "produto", "funcionario"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -113,29 +99,24 @@ public class AdmHistorico extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addContainerGap(670, Short.MAX_VALUE)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtHistorico)
-                            .addComponent(jLabel1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addContainerGap(677, Short.MAX_VALUE)
+                        .addComponent(jLabel1)))
                 .addComponent(jLabel3))
-            .addGroup(jlabel2Layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(178, 178, 178))
         );
         jlabel2Layout.setVerticalGroup(
-            jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jlabel2Layout.createSequentialGroup()
-                .addGap(242, 242, 242)
-                .addComponent(txtHistorico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+            jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jlabel2Layout.createSequentialGroup()
+                .addGap(248, 248, 248)
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -145,6 +126,8 @@ public class AdmHistorico extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
+        jButtonHistoricodevendas.setText("atualizar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,6 +135,10 @@ public class AdmHistorico extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jButtonHistoricodevendas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 6, Short.MAX_VALUE)
@@ -162,7 +149,9 @@ public class AdmHistorico extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 436, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jButtonHistoricodevendas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 331, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -212,14 +201,13 @@ public class AdmHistorico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButtonHistoricodevendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable jTable1;
     private javax.swing.JPanel jlabel2;
     public javax.swing.JTable jtDados;
     public javax.swing.JLabel pngRodinha;
