@@ -44,6 +44,7 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
+                nota.setMes(rs.getString("mes"));
                 
                notas.add(nota);
               
@@ -55,14 +56,15 @@ public ArrayList<Notafiscal> listaNotafiscal(){
         
     }
     
-    public void insereNotas(int id_produto, int id_funcionario){
+    public void insereNotas(int id_produto, int id_funcionario,String mes){
         String registro = null;
         try{
-            String sql= "INSERT INTO notafiscal(id_loja,id_produto,id_funcionario) VALUES (1,?,?)";
+            String sql= "INSERT INTO notafiscal(id_loja,id_produto,id_funcionario,mes) VALUES (1,?,?,?)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setInt(1, id_produto);
             stmt.setInt(2,id_funcionario);
+            stmt.setString(3,mes);
             
             stmt.execute();
             stmt.close();
@@ -71,14 +73,15 @@ public ArrayList<Notafiscal> listaNotafiscal(){
             System.out.println("Erro: "+e.getMessage());
         }
     }
-     public void editarNotas(int id, int id_produto, int id_funcionario){
+     public void editarNotas(int id, int id_produto, int id_funcionario, String mes){
         try{
-            String sql = "update notafiscal set id_produto=? ,id_funcionario =? where idnotafiscal=?";
+            String sql = "update notafiscal set id_produto=? ,id_funcionario =? ,mes=? where idnotafiscal=?";
             Connection conexaobd = conexao.getConnection();
             PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
             ps.setInt(1, id_produto);
             ps.setInt(2,id_funcionario);
-            ps.setInt(3, id);
+            ps.setString(3,mes);
+            ps.setInt(4, id);
             ps.executeUpdate();
         } catch (Exception e){
             System.out.println("Erro:"+e.getMessage());
@@ -115,11 +118,11 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
-                
+                nota.setMes(rs.getString("mes"));
                notas.add(nota);
               
            }
-            
+            //foi
         }catch(Exception e){
             System.out.println("Erro: "+ e.getMessage());
         } return notas.get(0);

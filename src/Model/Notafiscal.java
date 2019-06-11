@@ -16,7 +16,15 @@ public class Notafiscal {
     private int id_funcionario;
     private Costureiro funcionario;
     private Produto produto;
+    private String mes;
 
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
     public Costureiro getFuncionario() {
         return funcionario;
     }
@@ -53,16 +61,16 @@ public class Notafiscal {
         return id_produto;
     }
 
-    public void setId_produto(int id_produto) {
-        this.id_produto = id_produto;
+    public void setId_produto(int id) {
+        this.id_produto = id;
     }
 
     public int getId_funcionario() {
         return id_funcionario;
     }
 
-    public void setId_funcionario(int id_funcionario) {
-        this.id_funcionario = id_funcionario;
+    public void setId_funcionario(int id) {
+        this.id_funcionario = id;
     }
     
     

@@ -19,27 +19,28 @@ import java.util.ArrayList;
 public class Historico2 {
     
     public ArrayList<HistoricoDeUso>historicoMaquinaFunci(){
-        ArrayList<HistoricoDeUso>historico = new ArrayList<>();
-        ArrayList<Maquina>Maquinas = new ArrayList<>();
+        ArrayList<HistoricoDeUso>historics = new ArrayList<>();
+        ArrayList<Produto>produtos = new ArrayList<>();
         ArrayList<Costureiro>costureiros = new ArrayList<>();
-        HistoricoDeUso his = new HistoricoDeUso();
-        HistoricoDeUsoDAO hisdao = new HistoricoDeUsoDAO();
-        Maquina mec = new Maquina();
-        MaquinaDAO mecdao = new MaquinaDAO();
+        Notafiscal nota= new Notafiscal();
+        NotafiscalDAO notaDAO= new NotafiscalDAO();
+        HistoricoDeUsoDAO hisDAO=new HistoricoDeUsoDAO();
         ProdutoDAO prodao= new ProdutoDAO();
         Produto produto = new Produto();
         CostureiroDAO cosdao = new CostureiroDAO();
         Costureiro costureiro = new Costureiro(); 
-        
-               
-        Maquinas=mecdao.listaMaquina();
+        //Produto produto = new Produto();
+        Maquina mec = new Maquina ();
+        MaquinaDAO mecdao= new MaquinaDAO();
+        ArrayList<Maquina>maquinas = new ArrayList<>();
+        maquinas=mecdao.listaMaquina();
         costureiros=cosdao.listaTecido();
-        historico=hisdao.listaHistoricoDeUso();
-        
-         for (int i = 0; i < historico.size(); i++) {
+                historics=hisDAO.listaHistoricoDeUso();
+
+         for (int i = 0; i < historics.size(); i++) {
              for (int j = 0; j < costureiros.size(); j++) {
                  
-             if(historico.get(i).getId_costureiro()==costureiros.get(j).getId()){
+             if(historics.get(i).getId_costureiro()==costureiros.get(j).getId()){
                  costureiro = new Costureiro();
                  costureiro.setNome(costureiros.get(j).getNome());
                  costureiro.setCpf(costureiros.get(j).getCpf());
@@ -48,7 +49,7 @@ public class Historico2 {
                  costureiro.setSalario(costureiros.get(j).getSalario());
                  costureiro.setSenha(costureiros.get(j).getSenha());
                  costureiro.setUsuario(costureiros.get(j).getUsuario());
-                historico.get(i).setCostureiro(costureiro);
+                historics.get(i).setCostureiro(costureiro);
                  
              }
                  
@@ -56,17 +57,23 @@ public class Historico2 {
             
              
          }
-         for (int i = 0; i < historico.size(); i++) {
-             for (int j = 0; j < Maquinas.size(); j++) {
+         for (int i = 0; i < historics.size(); i++) {
+             for (int j = 0; j < maquinas.size(); j++) {
                  
-             if(historico.get(i).getId_maquina()==Maquinas.get(j).getIdmaquina()){
-                 mec = new Maquina();
+             if(historics.get(i).getId_maquina()==maquinas.get(j).getIdmaquina()){
+                 Maquina mec2 = new Maquina();
+                 mec2.setNome(maquinas.get(j).getNome());
+                 mec2.setDescricao(maquinas.get(j).getDescricao());
+                 mec2.setDiaManuntencao(maquinas.get(j).getDiaManuntencao());
+                 mec2.setIdmaquina(maquinas.get(j).getIdmaquina());
+                historics.get(i).setMaquina(mec2);
                  
-                  mec.setIdmaquina(Maquinas.get(j).getIdmaquina());
-                  mec.setDescricao(Maquinas.get(j).getDescricao());
-                  mec.setDiaManuntencao(Maquinas.get(j).getDiaManuntencao());
-                  mec.setNome(Maquinas.get(j).getNome());
-                historico.get(i).setMaquina(mec);
+                  //mec.setIdmaquina(Maquinas.get(j).getIdmaquina());
+                //  mec.setDescricao(Maquinas.get(j).getDescricao());
+                  //mec.setDiaManuntencao(Maquinas.get(j).getDiaManuntencao());
+                 // mec.setNome(Maquinas.get(j).getNome());
+               // historico.get(i).setMaquina(mec);
+                  
                  
              }
                  
@@ -74,7 +81,7 @@ public class Historico2 {
             
              
          }
-         return historico;
+         return historics;
         
         
                

@@ -83,6 +83,29 @@ public class TecidoDAO {
             
         }
     }
+     public void editarTecidoPassandoTecido(Tecido tecido){
+         
+                 int id =tecido.getId();
+                 String nome= tecido.getNome();
+                 float disponivel=tecido.getDisponivel();
+                 float vendido = tecido.getVendido();
+                 int id_fornecedor= tecido.getId_fornecedor();
+        try{
+            String sql = "update tecido set nome=?, disponivel=?,vendido=? ,id_fonecedor=? where idtecido=?";
+            Connection conexaobd = conexao.getConnection();
+            PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
+            ps.setString(1, nome);
+            ps.setFloat(2,disponivel);
+            ps.setFloat(3, vendido);
+            ps.setInt(4,id_fornecedor);
+            ps.setInt(5, id);
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println("Erro:"+e.getMessage());
+            
+        }
+    }
+     
      public void eliminarTecido(int id){
         try{
             String sql = "delete from tecido where idtecido=?";
@@ -149,4 +172,5 @@ public class TecidoDAO {
         } return tecidos.get(0);
         
     }
+     
 }
