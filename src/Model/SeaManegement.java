@@ -20,7 +20,8 @@ public class SeaManegement {
         Controller control = new Controller(log, cost);
        log.setVisible(true);
        log.setLocationRelativeTo(null);
-                                  
+                                
+       
        
         /*
         

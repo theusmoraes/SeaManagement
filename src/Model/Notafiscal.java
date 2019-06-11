@@ -14,6 +14,24 @@ public class Notafiscal {
     private int id_loja;
     private int id_produto;
     private int id_funcionario;
+    private Costureiro funcionario;
+    private Produto produto;
+
+    public Costureiro getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Costureiro funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 
     public int getIdnotafiscal() {
         return idnotafiscal;

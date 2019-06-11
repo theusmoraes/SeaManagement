@@ -5,8 +5,10 @@
  */
 package Dao;
 
+import Model.Costureiro;
 import Model.Maquina;
 import Model.Notafiscal;
+import Model.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +28,10 @@ public class NotafiscalDAO {
 public ArrayList<Notafiscal> listaNotafiscal(){
         ArrayList<Notafiscal>notas = new ArrayList<>();
         Notafiscal nota;
-        
+        Costureiro costureiro;
+        ProdutoDAO prodao= new ProdutoDAO();
+        CostureiroDAO cosdao = new CostureiroDAO();
+        Produto produto;
         
         try{
             Connection con = conexao.getConnection();
@@ -39,6 +44,10 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
+                costureiro = new Costureiro(); 
+               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
+               produto = new Produto();
+               produto= prodao.SelecioneProduto(rs.getInt("id_produto"));
                 
                notas.add(nota);
               
@@ -94,8 +103,10 @@ public ArrayList<Notafiscal> listaNotafiscal(){
      public Notafiscal SelecioneNota(int id){
         ArrayList<Notafiscal>notas = new ArrayList<>();
         Notafiscal nota;
-        
-        
+        Costureiro costureiro;
+        CostureiroDAO cosdao = new CostureiroDAO();
+        Produto produto;
+        ProdutoDAO prodao= new ProdutoDAO();
         try{
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from notafiscal where idnotafiscal=?");
@@ -108,7 +119,11 @@ public ArrayList<Notafiscal> listaNotafiscal(){
                 nota.setId_loja(rs.getInt("id_loja"));
                 nota.setId_produto(rs.getInt("id_produto"));
                 nota.setId_funcionario(rs.getInt("id_funcionario"));
-                
+                costureiro = new Costureiro(); 
+               costureiro = cosdao.selecioneCostureiro(rs.getInt("id_funcionario"));
+               produto = new Produto();
+               produto= prodao.SelecioneProduto(rs.getInt("id_produto"));
+               nota.setFuncionario(costureiro);
                notas.add(nota);
               
            }

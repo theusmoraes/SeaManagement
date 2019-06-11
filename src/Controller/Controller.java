@@ -42,7 +42,9 @@ public class Controller implements ActionListener, KeyListener {
      ArrayList<Adiministrador>adms = new ArrayList<>();
      Adiministrador subAdm;
      Costureiro subCos;
-     
+     Notafiscal notafiscal=new Notafiscal();
+     NotafiscalDAO notafiscalDAO=new NotafiscalDAO();
+     ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -66,6 +68,22 @@ public class Controller implements ActionListener, KeyListener {
         }
             
         
+    }
+    public void preencheTabela(JTable tabela){
+        DefaultTableModel tabelinha = new DefaultTableModel();
+        tabela.setModel(tabelinha);
+        tabelinha.addColumn("Id");
+        tabelinha.addColumn("Produto");
+        tabelinha.addColumn("Funcionario");
+        
+        Object [] coluna  = new Object[3];
+        int numRegistros = notafiscalDAO.listaNotafiscal().size();
+        for(int i = 0; i<numRegistros; i++){
+            coluna [0] = notafiscalDAO.listaNotafiscal().get(i).getIdnotafiscal();
+            coluna[1] = notafiscalDAO.listaNotafiscal().get(i).getProduto().getNome();
+            coluna[2] = notafiscalDAO.listaNotafiscal().get(i).getFuncionario().getNome();
+            tabelinha.addRow(coluna);
+        }
     }
  
     @Override
