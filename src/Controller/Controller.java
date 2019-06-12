@@ -474,6 +474,7 @@ public class Controller implements ActionListener, KeyListener {
                 e.setSource(null);
        }
        if (e.getSource() == cadastroR.btnAdicionar){
+           e.setSource(null);
            String nome_tecido = (String) cadastroR.jcTecidos.getSelectedItem();
          int quantidade_tecido = Integer.parseInt(cadastroR.txtQuantTecido.getText());
          Tecido tecronaldo =new    Tecido();
@@ -483,7 +484,7 @@ public class Controller implements ActionListener, KeyListener {
         tecronaldodao.editarTecidoPassandoTecido(tecronaldo);
          cadastroR.setVisible(false);
          tela.setVisible(true);
-
+         
            
        }
        if (e.getSource() == empregadoBasico.btnPerfil){
@@ -503,7 +504,7 @@ public class Controller implements ActionListener, KeyListener {
            
        }
        if (e.getSource() == empregadoBasico.btnRegistro){
-           
+           e.setSource(null);
            empregadoBasico.setVisible(false);
            empRegistro.btnSalvar.addActionListener(this);
            empRegistro.jcProduto.addActionListener(this);
@@ -546,8 +547,10 @@ public class Controller implements ActionListener, KeyListener {
         if (e.getSource() == empnota.telaEmpregadoSair){
             empnota.setVisible(false);
             empregadoBasico.setVisible(true);
+            e.setSource(null);
         }
         if (e.getSource() == tela.btnInformacao) {
+            e.setSource(null);
             tela.setVisible(false);
             informacao.setVisible(true);
             prencherListaMaquina(informacao.jcMaquina);
@@ -560,6 +563,7 @@ public class Controller implements ActionListener, KeyListener {
             
         }
         if (e.getSource() == informacao.btnAtualizar){
+            e.setSource(null);
             String nome = (String)informacao.jcTecido.getSelectedItem();
             int id = tecidoDAO.SelecioneTecidoNomeRetornaId(nome);
             Tecido tecidinho = new Tecido();
@@ -570,6 +574,7 @@ public class Controller implements ActionListener, KeyListener {
             informacao.tttVendido.setText(Float.toString(tecidinho.getVendido()));
         }
         if (e.getSource() == informacao.btnAtualizarMaquina){
+            e.setSource(null);
             String nome = (String) informacao.jcMaquina.getSelectedItem();
             int id = maquinaDAO.SelecioneMaquinaNomeRetornaId(nome);
             Maquina maquininha = new Maquina();
@@ -579,6 +584,7 @@ public class Controller implements ActionListener, KeyListener {
             informacao.tttId.setText(Integer.toString(maquininha.getIdmaquina()));
         }
         if (e.getSource() == informacao.telaCadastraUsuario){
+            e.setSource(null);
             informacao.setVisible(false);
             tela.setVisible(true);
         }
