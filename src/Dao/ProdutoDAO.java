@@ -194,7 +194,7 @@ public class ProdutoDAO {
 
         try{
             Connection con = conexao.getConnection();
-            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produtodeletado");
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from produto");
             ResultSet rs = stmt.executeQuery();
             
            while(rs.next()){

@@ -462,7 +462,7 @@ public class Controller implements ActionListener, KeyListener {
                 String jay2;
         for (int i = 0; i < note.size(); i++) {
             
-                jay2="\nid: "+note.get(i).getIdnotafiscal()+"\nmaquina: "+note.get(i).getProduto().getNome()+"\nfuncionario: "+note.get(i).getFuncionario().getNome()+"\n mes: "+note.get(i).getMes()+"";
+                jay2="\nid: "+note.get(i).getIdnotafiscal()+"\nproduto: "+note.get(i).getProduto().getNome()+"\nfuncionario: "+note.get(i).getFuncionario().getNome()+"\n mes: "+note.get(i).getMes()+"";
             
             jay= jay.concat(jay2);
         }
@@ -538,6 +538,8 @@ public class Controller implements ActionListener, KeyListener {
            String produto = (String)empnota.jcProduto.getSelectedItem();
            int id_produto = produtoDAO.SelecioneIdProduto(produto);
            notafiscalDAO.insereNotas(id_produto, id_funcionario, mes);
+           Nota2 nota3= new Nota2();
+           nota3.passandoprodutovendido(id_produto);
            empnota.setVisible(false);
            empregadoBasico.setVisible(true);
         }
@@ -644,17 +646,22 @@ public class Controller implements ActionListener, KeyListener {
        }
        
        if (e.getSource() == empRegistro.btnSalvar){
+           e.setSource(null);
           String horarioIncio = empRegistro.txHorarioInicio.getText();
           String horarioFim = (empRegistro.txtHorarioFim.getText());
           int idMaquina = Integer.parseInt(empRegistro.txtIdMaquina.getText());
           int idUsuario = Integer.parseInt(empRegistro.txtID.getText());
-          String idproduto = (String) empRegistro.jcProduto.getSelectedItem();
+          String nomeproduto = (String) empRegistro.jcProduto.getSelectedItem();
           ProdutoDAO produtoDAO2 =new ProdutoDAO();
-          Produto produto2 = new Produto();
+         // Produto produto2 = new Produto();
           Nota2 nota2=new Nota2();
-          int idPro = produtoDAO2.SelecioneIdProduto(idproduto);
-          historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario,idPro);
+          int idPro = produtoDAO2.SelecioneIdProduto(nomeproduto);
+         //int idPro =2;
+           //System.out.println("Controller.Controller.actionPerformed()"+nomeproduto);
+         //  System.out.println("Controller.Controller.actionPerformed()"+idPro);
           nota2.passandoprodutodecresenta(idPro);
+
+          historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario,idPro);
           
           
        }
