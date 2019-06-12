@@ -58,7 +58,8 @@ public class Controller implements ActionListener, KeyListener {
      ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
      AdmHistorico his = new AdmHistorico();
      AdmRelatorio relatorio = new AdmRelatorio();
-     TelaNota telaNota =new TelaNota();
+     AdminInfo informacao = new AdminInfo();
+     EmpregadoNota empnota = new EmpregadoNota();
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -66,6 +67,7 @@ public class Controller implements ActionListener, KeyListener {
         this.login.BtnSenha.addActionListener(this);
         this.login.brnEntrar.addActionListener(this);
         this.login.setResizable(false);
+        
         
 
 
@@ -93,6 +95,14 @@ public class Controller implements ActionListener, KeyListener {
         box.removeAllItems();
         for (i=0;i<numProdutos;i++){
             box.addItem(produtoDAO.listaProduto().get(i).getNome());
+        }
+     }
+     public void prencherListaMaquina (JComboBox box){
+        int numMaquina = maquinaDAO.listaMaquina().size();
+        int i;
+        box.removeAllItems();
+        for (i=0;i<numMaquina;i++){
+            box.addItem(maquinaDAO.listaMaquina().get(i).getNome());
         }
      }
     public void prencherListaTecidos (JComboBox box){
@@ -170,12 +180,13 @@ public class Controller implements ActionListener, KeyListener {
             this.tela.btnHistorico.addActionListener(this);
             this.tela.btnCadastroResto.addActionListener(this);
             this.tela.telaVoltarAdm.addActionListener(this);
+            this.tela.btnInformacao.addActionListener(this);
            }else{
                if (subCos != null){
                  empregadoBasico.btnPerfil.addActionListener(this);
                  empregadoBasico.btnRegistro.addActionListener(this);
                  empregadoBasico.telaEmpregadoSair.addActionListener(this);
-                 empregadoBasico.vendas12.addActionListener(this);
+                 empregadoBasico.btnVenda.addActionListener(this);
                  login.setVisible(false);
                  subCos.InsereNomePerfil(perfil, subCos);
                  empregadoBasico.setVisible(true);
@@ -506,20 +517,69 @@ public class Controller implements ActionListener, KeyListener {
            empRegistro.telaEmpregadoRegistroVoltar.addActionListener(this);
           
        }
-       if (e.getSource() == empregadoBasico.vendas12){
-           
+       if (e.getSource() == empregadoBasico.btnVenda){
            e.setSource(null);
            
             
            empregadoBasico.setVisible(false);
-           telaNota.setVisible(true);
-           telaNota.jTextIdEMPREGADO1EMRE.addActionListener(this);
-           telaNota.jTextIdEMPREGADOMES.addActionListener(this);
-           telaNota.jTextIdEMPREGADOPROD.addActionListener(this);
-           telaNota.telaNota.addActionListener(this);
-           
+           empnota.setVisible(true);
+           empnota.jcMes.addActionListener(this);
+           empnota.jcProduto.addActionListener(this);
+           empnota.telaEmpregadoSair.addActionListener(this);
+           empnota.txtID.addActionListener(this);
+           empnota.btnConcluir.addActionListener(this);
+           prencherListaProdutos(empnota.jcProduto);
            
        }
+        if (e.getSource() == empnota.btnConcluir){
+            e.setSource(null);
+           int id_funcionario = Integer.parseInt(empnota.txtID.getText());
+           String mes = (String)empnota.jcMes.getSelectedItem();
+           String produto = (String)empnota.jcProduto.getSelectedItem();
+           int id_produto = produtoDAO.SelecioneIdProduto(produto);
+           notafiscalDAO.insereNotas(id_produto, id_funcionario, mes);
+           empnota.setVisible(false);
+           empregadoBasico.setVisible(true);
+        }
+        if (e.getSource() == empnota.telaEmpregadoSair){
+            empnota.setVisible(false);
+            empregadoBasico.setVisible(true);
+        }
+        if (e.getSource() == tela.btnInformacao) {
+            tela.setVisible(false);
+            informacao.setVisible(true);
+            prencherListaMaquina(informacao.jcMaquina);
+            prencherListaTecidos(informacao.jcTecido);
+            informacao.btnAtualizar.addActionListener(this);
+            informacao.btnAtualizarMaquina.addActionListener(this);
+            informacao.jcTecido.addActionListener(this);
+            informacao.jcMaquina.addActionListener(this);
+            informacao.telaCadastraUsuario.addActionListener(this);
+            
+        }
+        if (e.getSource() == informacao.btnAtualizar){
+            String nome = (String)informacao.jcTecido.getSelectedItem();
+            int id = tecidoDAO.SelecioneTecidoNomeRetornaId(nome);
+            Tecido tecidinho = new Tecido();
+            tecidinho = tecidoDAO.SelecioneTecido(id);
+            informacao.tttIdTecido.setText(Integer.toString(tecidinho.getId()));
+            informacao.tttIDfornecedor.setText(Integer.toString(tecidinho.getId_fornecedor()));
+            informacao.tttDisponivel.setText(Float.toString(tecidinho.getDisponivel()));
+            informacao.tttVendido.setText(Float.toString(tecidinho.getVendido()));
+        }
+        if (e.getSource() == informacao.btnAtualizarMaquina){
+            String nome = (String) informacao.jcMaquina.getSelectedItem();
+            int id = maquinaDAO.SelecioneMaquinaNomeRetornaId(nome);
+            Maquina maquininha = new Maquina();
+            maquininha = maquinaDAO.SelecioneMaquina(id);
+            informacao.tttDescricao.setText(maquininha.getDescricao());
+            informacao.tttManutencao.setText(maquininha.getDiaManuntencao());
+            informacao.tttId.setText(Integer.toString(maquininha.getIdmaquina()));
+        }
+        if (e.getSource() == informacao.telaCadastraUsuario){
+            informacao.setVisible(false);
+            tela.setVisible(true);
+        }
        if (e.getSource() == empRegistro.telaEmpregadoRegistroVoltar){
            e.setSource(null);
            

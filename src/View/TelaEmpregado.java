@@ -22,15 +22,19 @@ public class TelaEmpregado extends javax.swing.JFrame {
         initComponents();
         btnPerfil.setBackground(new Color (237,223,196));
         btnRegistro.setBackground(new Color (237,223,196));
+        btnVenda.setBackground(new Color (237,223,196));
+        btnVenda.setBorder(null);
         btnRegistro.setBorder(null);
         btnPerfil.setBorder(null);
+        ImageIcon vendinha = new ImageIcon("src/imagens/venda.png");
+        vendinha.setImage(vendinha.getImage().getScaledInstance(btnVenda.getWidth(), btnVenda.getHeight(), 1));
         ImageIcon rodinha = new ImageIcon("src/imagens/rodinha.png");
         rodinha.setImage(rodinha.getImage().getScaledInstance(pngRodinha.getWidth(), pngRodinha.getHeight(), 1));
         ImageIcon perfil = new ImageIcon("src/Imagens/PessoaPerfil2.png");
         perfil.setImage(perfil.getImage().getScaledInstance(btnPerfil.getWidth(), btnPerfil.getHeight(), 1));
         ImageIcon registro = new ImageIcon("src/Imagens/paper.png");
         registro.setImage(registro.getImage().getScaledInstance(btnRegistro.getWidth(), btnRegistro.getHeight(), 1));
-
+        btnVenda.setIcon(vendinha);
         pngRodinha.setIcon(rodinha);
         btnRegistro.setIcon(registro);
         btnPerfil.setIcon(perfil);
@@ -58,7 +62,8 @@ public class TelaEmpregado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         telaEmpregadoSair = new javax.swing.JButton();
-        vendas12 = new javax.swing.JButton();
+        btnVenda = new javax.swing.JButton();
+        txtRegistro1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,7 +113,14 @@ public class TelaEmpregado extends javax.swing.JFrame {
 
         telaEmpregadoSair.setText("Sair");
 
-        vendas12.setText("VENDAS");
+        btnVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendaActionPerformed(evt);
+            }
+        });
+
+        txtRegistro1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        txtRegistro1.setText("Vendas");
 
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
@@ -117,20 +129,6 @@ public class TelaEmpregado extends javax.swing.JFrame {
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGap(289, 289, 289)
-                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGap(276, 276, 276)
-                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vendas12)
-                                    .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +137,22 @@ public class TelaEmpregado extends javax.swing.JFrame {
                                 .addGap(136, 136, 136))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
                                 .addComponent(telaEmpregadoSair)
-                                .addGap(72, 72, 72))))))
+                                .addGap(72, 72, 72))))
+                    .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jlabel2Layout.createSequentialGroup()
+                                .addGap(268, 268, 268)
+                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jlabel2Layout.createSequentialGroup()
+                                .addGap(276, 276, 276)
+                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addGap(682, 682, 682)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,19 +175,21 @@ public class TelaEmpregado extends javax.swing.JFrame {
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(128, 128, 128)
+                .addGap(19, 19, 19)
                 .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(telaEmpregadoSair)
-                    .addComponent(vendas12))
-                .addGap(608, 608, 608)
+                .addGap(37, 37, 37)
+                .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(telaEmpregadoSair)
+                .addGap(639, 639, 639)
                 .addComponent(jLabel2)
                 .addGap(53, 53, 53)
                 .addComponent(jLabel3))
@@ -203,6 +218,10 @@ public class TelaEmpregado extends javax.swing.JFrame {
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +264,7 @@ public class TelaEmpregado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnPerfil;
     public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnVenda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -256,6 +276,6 @@ public class TelaEmpregado extends javax.swing.JFrame {
     public javax.swing.JButton telaEmpregadoSair;
     public javax.swing.JLabel txtPerfil;
     public javax.swing.JLabel txtRegistro;
-    public javax.swing.JButton vendas12;
+    public javax.swing.JLabel txtRegistro1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,7 +19,9 @@ public class TelaAdimin extends javax.swing.JFrame {
      */
     public TelaAdimin() {
         initComponents();
+        btnInformacao.setBackground(new Color (237,223,196));
         btnCadastroResto.setBackground(new Color (237,223,196));
+        btnInformacao.setBorder(null);
         btnCadastroResto.setBorder(null);
         btnPerfil.setBackground(new Color (237,223,196));
         btnCadastro.setBackground(new Color (237,223,196));
@@ -27,6 +29,7 @@ public class TelaAdimin extends javax.swing.JFrame {
         btnCadastro.setBorder(null);
         btnPerfil.setBorder(null);
         btnHistorico.setBorder(null);
+        ImageIcon info = new ImageIcon ("src/imagens/info.png");
         ImageIcon cadastroReal = new ImageIcon ("src/imagens/cadastrar.png");
         ImageIcon rodinha = new ImageIcon("src/imagens/rodinha.png");
         ImageIcon cadastro = new ImageIcon ("src/imagens/papel.png");
@@ -36,7 +39,9 @@ public class TelaAdimin extends javax.swing.JFrame {
         ImageIcon perfil = new ImageIcon("src/Imagens/PessoaPerfil2.png");
         perfil.setImage(perfil.getImage().getScaledInstance(btnPerfil.getWidth(), btnPerfil.getHeight(), 1));
         ImageIcon historico = new ImageIcon("src/Imagens/paper.png");
+        info.setImage(info.getImage().getScaledInstance(btnInformacao.getWidth(), btnPerfil.getHeight(), 1));
         historico.setImage(historico.getImage().getScaledInstance(btnCadastro.getWidth(), btnCadastro.getHeight(), 1));
+        btnInformacao.setIcon(info);
         btnCadastroResto.setIcon(cadastroReal);
         btnCadastro.setIcon(perfil);
         pngRodinha.setIcon(rodinha);
@@ -74,6 +79,8 @@ public class TelaAdimin extends javax.swing.JFrame {
         btnCadastroResto = new javax.swing.JButton();
         txtPerfil2 = new javax.swing.JLabel();
         telaVoltarAdm = new javax.swing.JButton();
+        btnInformacao = new javax.swing.JButton();
+        txtPerfil3 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -148,6 +155,16 @@ public class TelaAdimin extends javax.swing.JFrame {
 
         telaVoltarAdm.setText("Voltar");
 
+        btnInformacao.setPreferredSize(new java.awt.Dimension(150, 150));
+        btnInformacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInformacaoActionPerformed(evt);
+            }
+        });
+
+        txtPerfil3.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        txtPerfil3.setText("Informações");
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -168,14 +185,18 @@ public class TelaAdimin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel3))
             .addGroup(jlabel2Layout.createSequentialGroup()
-                .addGap(177, 177, 177)
+                .addGap(64, 64, 64)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addComponent(btnInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
                         .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)
                         .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50))
                     .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addComponent(txtPerfil3)
+                        .addGap(30, 30, 30)
                         .addComponent(txtPerfil2)
                         .addGap(43, 43, 43)
                         .addComponent(txtPerfil1)
@@ -192,7 +213,7 @@ public class TelaAdimin extends javax.swing.JFrame {
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,13 +235,15 @@ public class TelaAdimin extends javax.swing.JFrame {
                                     .addComponent(txtRegistro1)
                                     .addComponent(txtPerfil1)
                                     .addComponent(txtHistorico)
-                                    .addComponent(txtPerfil2))
+                                    .addComponent(txtPerfil2)
+                                    .addComponent(txtPerfil3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
@@ -263,6 +286,10 @@ public class TelaAdimin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastroRestoActionPerformed
 
+    private void btnInformacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformacaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -302,6 +329,7 @@ public class TelaAdimin extends javax.swing.JFrame {
     public javax.swing.JButton btnCadastro;
     public javax.swing.JButton btnCadastroResto;
     public javax.swing.JButton btnHistorico;
+    public javax.swing.JButton btnInformacao;
     public javax.swing.JButton btnPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -319,6 +347,7 @@ public class TelaAdimin extends javax.swing.JFrame {
     public javax.swing.JLabel txtHistorico;
     public javax.swing.JLabel txtPerfil1;
     public javax.swing.JLabel txtPerfil2;
+    public javax.swing.JLabel txtPerfil3;
     public javax.swing.JLabel txtRegistro1;
     // End of variables declaration//GEN-END:variables
 }

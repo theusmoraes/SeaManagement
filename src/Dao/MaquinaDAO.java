@@ -48,6 +48,32 @@ public class MaquinaDAO {
         } return maquinas;
         
     }
+     public int SelecioneMaquinaNomeRetornaId(String nome){
+        ArrayList<Maquina>maquinas = new ArrayList<>();
+        Maquina maquina;
+        
+        
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from maquina where nome=?");
+            stmt.setString(1,nome);
+            ResultSet rs = stmt.executeQuery();
+           while(rs.next()){
+               maquina = new Maquina();
+                maquina.setIdmaquina(rs.getInt("idmaquina"));
+                maquina.setNome(rs.getString("nome"));
+                maquina.setDiaManuntencao(rs.getString("diamanutencao"));
+                maquina.setDescricao(rs.getString("descricao"));
+                
+               maquinas.add(maquina);
+              
+           }
+            
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return maquinas.get(0).getIdmaquina();
+        
+    }
     
     public void insereMaquina(String nome, String descricao, String diamanutencao){
         String registro = null;
