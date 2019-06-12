@@ -128,6 +128,8 @@ public ArrayList<Notafiscal> listaNotafiscal(){
         } return notas.get(0);
         
     }
+     
+     
      public Notafiscal Lista(int id){
         ArrayList<Notafiscal>notas = new ArrayList<>();
         Notafiscal nota;
@@ -157,4 +159,34 @@ public ArrayList<Notafiscal> listaNotafiscal(){
         } return notas.get(0);
         
     }
+     public ArrayList<Notafiscal> NotasProduto(int id_produto){
+        ArrayList<Notafiscal>notas = new ArrayList<>();
+        Notafiscal nota;
+        Costureiro costureiro;
+        CostureiroDAO cosdao = new CostureiroDAO();
+        Produto produto;
+        ProdutoDAO prodao= new ProdutoDAO();
+        try{
+            Connection con = conexao.getConnection();
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement("Select * from notafiscal where id_produto =?");
+            stmt.setInt(1,id_produto);
+            ResultSet rs = stmt.executeQuery();
+            
+           while(rs.next()){
+                nota= new Notafiscal();
+                nota.setIdnotafiscal(rs.getInt("idnotafiscal"));
+                nota.setId_loja(rs.getInt("id_loja"));
+                nota.setId_produto(rs.getInt("id_produto"));
+                nota.setId_funcionario(rs.getInt("id_funcionario"));
+                nota.setMes(rs.getString("mes"));
+               notas.add(nota);
+              
+           }
+            //foi
+        }catch(Exception e){
+            System.out.println("Erro: "+ e.getMessage());
+        } return notas;
+        
+    }
+   
 }
