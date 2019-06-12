@@ -175,6 +175,7 @@ public class Controller implements ActionListener, KeyListener {
            if (subAdm != null) {
             login.setVisible(false);
             tela.setVisible(true); 
+            tela.setLocationRelativeTo(null);
             this.tela.btnCadastro.addActionListener(this);
             this.tela.btnPerfil.addActionListener(this);
             this.tela.btnHistorico.addActionListener(this);
@@ -189,7 +190,9 @@ public class Controller implements ActionListener, KeyListener {
                  empregadoBasico.btnVenda.addActionListener(this);
                  login.setVisible(false);
                  subCos.InsereNomePerfil(perfil, subCos);
+                 empregadoBasico.setLocationRelativeTo(null);
                  empregadoBasico.setVisible(true);
+                 
                }else{
                    JOptionPane.showMessageDialog(null,"Senha ou Usuario errado","Erro de login",JOptionPane.ERROR_MESSAGE);
                }
@@ -207,6 +210,7 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastro.txtSalario.addActionListener(this);
            this.cadastro.txtUser.addActionListener(this);
            this.cadastro.cxAdmin.addActionListener(this);
+           this.cadastro.setLocationRelativeTo(null);
            this.cadastro.setVisible(true);
            this.cadastro.telaCadastraUsuario.addActionListener(this);
            e.setSource(null);
@@ -220,7 +224,9 @@ public class Controller implements ActionListener, KeyListener {
             prencheGrafico("casaco", dataset);
             relatorio.btnAtualiza.addActionListener(this);
             prencherListaProdutos(relatorio.jcProdutos);
+            relatorio.setLocationRelativeTo(null);
             relatorio.setVisible(true);
+            
             relatorio.telaRelatorio.addActionListener(this);
 
             
@@ -257,6 +263,7 @@ public class Controller implements ActionListener, KeyListener {
                }
                 cadastro.setVisible(false);
                 tela.setVisible(true);
+                tela.setLocationRelativeTo(null);
                
            }
            
@@ -265,6 +272,7 @@ public class Controller implements ActionListener, KeyListener {
        if (e.getSource() == tela.btnCadastroResto){
            tela.setVisible(false);
            cadastroR.setVisible(true);
+           cadastroR.setLocationRelativeTo(null);
            this.cadastroR.btnConfirmaOpcoes.addActionListener(this);
            this.cadastroR.btnAdicionar.addActionListener(this);           
            this.cadastroR.btnSalvar.addActionListener(this);
@@ -419,10 +427,12 @@ public class Controller implements ActionListener, KeyListener {
            }
            cadastroR.setVisible(false);
            tela.setVisible(true);
+           tela.setLocationRelativeTo(null);
        }
        if (e.getSource() == tela.btnHistorico){
            tela.setVisible(false);
            his.setVisible(true);
+           his.setLocationRelativeTo(null);
            his.setSize (900,660);
            this.his.jButtonHistoricodevendas.addActionListener(this);
            this.his.vendatop.addActionListener(this);
@@ -484,6 +494,7 @@ public class Controller implements ActionListener, KeyListener {
         tecronaldodao.editarTecidoPassandoTecido(tecronaldo);
          cadastroR.setVisible(false);
          tela.setVisible(true);
+         tela.setLocationRelativeTo(null);
          
            
        }
@@ -493,6 +504,7 @@ public class Controller implements ActionListener, KeyListener {
         
            empregadoBasico.setVisible(false);
            perfil.setVisible(true);
+           perfil.setLocationRelativeTo(null);
            perfil.telaPerfilVoltar.addActionListener(this);
        }
        if (e.getSource() == perfil.telaPerfilVoltar){
@@ -500,19 +512,22 @@ public class Controller implements ActionListener, KeyListener {
            
             perfil.setVisible(false);
            empregadoBasico.setVisible(true);
+           empregadoBasico.setLocationRelativeTo(null);
            
            
        }
        if (e.getSource() == empregadoBasico.btnRegistro){
            e.setSource(null);
            empregadoBasico.setVisible(false);
+           empRegistro.setLocationRelativeTo(null);
            empRegistro.btnSalvar.addActionListener(this);
            empRegistro.jcProduto.addActionListener(this);
            prencherListaProdutos(empRegistro.jcProduto);
            empRegistro.txHorarioInicio.addActionListener(this);
            empRegistro.txtHorarioFim.addActionListener(this);
-           empRegistro.txtIdMaquina.addActionListener(this);
            empRegistro.txtID.addActionListener(this);
+           empRegistro.jcMaquina.addActionListener(this);
+           prencherListaMaquina(empRegistro.jcMaquina);
            
            empRegistro.setVisible(true);
            empRegistro.telaEmpregadoRegistroVoltar.addActionListener(this);
@@ -524,6 +539,7 @@ public class Controller implements ActionListener, KeyListener {
             
            empregadoBasico.setVisible(false);
            empnota.setVisible(true);
+           empnota.setLocationRelativeTo(null);
            empnota.jcMes.addActionListener(this);
            empnota.jcProduto.addActionListener(this);
            empnota.telaEmpregadoSair.addActionListener(this);
@@ -543,15 +559,18 @@ public class Controller implements ActionListener, KeyListener {
            nota3.passandoprodutovendido(id_produto);
            empnota.setVisible(false);
            empregadoBasico.setVisible(true);
+           empregadoBasico.setLocationRelativeTo(null);
         }
         if (e.getSource() == empnota.telaEmpregadoSair){
             empnota.setVisible(false);
             empregadoBasico.setVisible(true);
+            empregadoBasico.setLocationRelativeTo(null);
             e.setSource(null);
         }
         if (e.getSource() == tela.btnInformacao) {
             e.setSource(null);
             tela.setVisible(false);
+            informacao.setLocationRelativeTo(null);
             informacao.setVisible(true);
             prencherListaMaquina(informacao.jcMaquina);
             prencherListaTecidos(informacao.jcTecido);
@@ -587,12 +606,14 @@ public class Controller implements ActionListener, KeyListener {
             e.setSource(null);
             informacao.setVisible(false);
             tela.setVisible(true);
+            tela.setLocationRelativeTo(null);
         }
        if (e.getSource() == empRegistro.telaEmpregadoRegistroVoltar){
            e.setSource(null);
            
             empRegistro.setVisible(false);
            empregadoBasico.setVisible(true);
+           empregadoBasico.setLocationRelativeTo(null);
            
            
        }
@@ -602,6 +623,7 @@ public class Controller implements ActionListener, KeyListener {
             
            empregadoBasico.setVisible(false);
            login.setVisible(true);
+           login.setLocationRelativeTo(null);
            
            
        }
@@ -611,6 +633,7 @@ public class Controller implements ActionListener, KeyListener {
             
            cadastro.setVisible(false);
            tela.setVisible(true);
+           tela.setLocationRelativeTo(null);
            
            
        }
@@ -620,6 +643,7 @@ public class Controller implements ActionListener, KeyListener {
             
            cadastroR.setVisible(false);
            tela.setVisible(true);
+           tela.setLocationRelativeTo(null);
            
            
        }
@@ -629,6 +653,7 @@ public class Controller implements ActionListener, KeyListener {
             
            his.setVisible(false);
            tela.setVisible(true);
+           tela.setLocationRelativeTo(null);
            
            
        }
@@ -638,6 +663,7 @@ public class Controller implements ActionListener, KeyListener {
             
            tela.setVisible(false);
            login.setVisible(true);
+           login.setLocationRelativeTo(null);
            
            
        }
@@ -647,7 +673,7 @@ public class Controller implements ActionListener, KeyListener {
             
            relatorio.setVisible(false);
            tela.setVisible(true);
-           
+           tela.setLocationRelativeTo(null);
            
        }
        
@@ -655,19 +681,24 @@ public class Controller implements ActionListener, KeyListener {
            e.setSource(null);
           String horarioIncio = empRegistro.txHorarioInicio.getText();
           String horarioFim = (empRegistro.txtHorarioFim.getText());
-          int idMaquina = Integer.parseInt(empRegistro.txtIdMaquina.getText());
+          String nomeMaquina = (String) empRegistro.jcMaquina.getSelectedItem();
+          int idMaquina = maquinaDAO.SelecioneMaquinaNomeRetornaId(nomeMaquina);
           int idUsuario = Integer.parseInt(empRegistro.txtID.getText());
           String nomeproduto = (String) empRegistro.jcProduto.getSelectedItem();
           ProdutoDAO produtoDAO2 =new ProdutoDAO();
          // Produto produto2 = new Produto();
           Nota2 nota2=new Nota2();
           int idPro = produtoDAO2.SelecioneIdProduto(nomeproduto);
+          
          //int idPro =2;
            //System.out.println("Controller.Controller.actionPerformed()"+nomeproduto);
          //  System.out.println("Controller.Controller.actionPerformed()"+idPro);
           nota2.passandoprodutodecresenta(idPro);
 
           historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario,idPro);
+          empRegistro.setVisible(false);
+          empregadoBasico.setVisible(true);
+          empregadoBasico.setLocationRelativeTo(null);
           
           
        }

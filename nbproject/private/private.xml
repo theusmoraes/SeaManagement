@@ -6,12 +6,19 @@
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Costureiro.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/FornecedorDAO.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/SeaManegement.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/Perfil.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Produto.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/EmpregadoNota.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/TecidoDAO.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/LojaDAO.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Empregado.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/CadastroUsuario.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Tecido.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Nota2.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/Cadastro.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/AdminVendas.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/AdminInfo.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Estoque.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/HistoricoDeUso.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/View/AdmRelatorio.java</file>
@@ -28,6 +35,7 @@
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Model/Maquina.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Imagens/Papelzinho%20original.png</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/AdmDAO.java</file>
+            <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/HistoricoDeUsoDAO.java</file>
             <file>file:/C:/Users/Geral/Desktop/github/SeaManagement/src/Dao/CostureiroDAO.java</file>
         </group>
     </open-files>

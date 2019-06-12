@@ -38,7 +38,6 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txHorarioInicio = new javax.swing.JTextField();
         txtHorarioFim = new javax.swing.JTextField();
-        txtIdMaquina = new javax.swing.JTextField();
         txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -46,6 +45,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         jcProduto = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         telaEmpregadoRegistroVoltar = new javax.swing.JButton();
+        jcMaquina = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,12 +87,6 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
             }
         });
 
-        txtIdMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdMaquinaActionPerformed(evt);
-            }
-        });
-
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIDActionPerformed(evt);
@@ -100,7 +94,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel7.setText("id da maquina ");
+        jLabel7.setText("Maquina  Usada");
 
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel13.setText("seu ID ");
@@ -114,6 +108,8 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
 
         telaEmpregadoRegistroVoltar.setText("voltar");
 
+        jcMaquina.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleciona uma Maquina>" }));
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -123,9 +119,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtIdMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                        .addComponent(jLabel7)
                         .addGap(112, 112, 112)
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,17 +146,18 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
                             .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jlabel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel13))
-                            .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jlabel2Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(telaEmpregadoRegistroVoltar)
-                        .addGap(67, 67, 67))))
+                        .addGap(67, 67, 67))
+                    .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jlabel2Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel13))
+                            .addComponent(jcProduto, 0, 166, Short.MAX_VALUE)
+                            .addComponent(jcMaquina, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +174,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
@@ -231,10 +226,6 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
     private void txtHorarioFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorarioFimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHorarioFimActionPerformed
-
-    private void txtIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdMaquinaActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
         // TODO add your handling code here:
@@ -288,13 +279,13 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
+    public javax.swing.JComboBox jcMaquina;
     public javax.swing.JComboBox jcProduto;
     private javax.swing.JPanel jlabel2;
     public javax.swing.JButton telaEmpregadoRegistroVoltar;
     public javax.swing.JTextField txHorarioInicio;
     public javax.swing.JTextField txtHorarioFim;
     public javax.swing.JTextField txtID;
-    public javax.swing.JTextField txtIdMaquina;
     public javax.swing.JLabel txtRegistro;
     // End of variables declaration//GEN-END:variables
 }
