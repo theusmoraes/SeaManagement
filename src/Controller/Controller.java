@@ -57,6 +57,7 @@ public class Controller implements ActionListener, KeyListener {
      ArrayList<Notafiscal>notasfiscal = new ArrayList<>();
      AdmHistorico his = new AdmHistorico();
      AdmRelatorio relatorio = new AdmRelatorio();
+     TelaNota telaNota =new TelaNota();
     public Controller (Login loginCrud, Costureiro costureiro){
         this.costureiro = costureiro;
         this.login = loginCrud;
@@ -127,6 +128,7 @@ public class Controller implements ActionListener, KeyListener {
                  empregadoBasico.btnPerfil.addActionListener(this);
                  empregadoBasico.btnRegistro.addActionListener(this);
                  empregadoBasico.telaEmpregadoSair.addActionListener(this);
+                 empregadoBasico.vendas12.addActionListener(this);
                  login.setVisible(false);
                  subCos.InsereNomePerfil(perfil, subCos);
                  empregadoBasico.setVisible(true);
@@ -452,6 +454,20 @@ public class Controller implements ActionListener, KeyListener {
            empRegistro.setVisible(true);
            empRegistro.telaEmpregadoRegistroVoltar.addActionListener(this);
           
+       }
+       if (e.getSource() == empregadoBasico.vendas12){
+           
+           e.setSource(null);
+           
+            
+           empregadoBasico.setVisible(false);
+           telaNota.setVisible(true);
+           telaNota.jTextIdEMPREGADO1EMRE.addActionListener(this);
+           telaNota.jTextIdEMPREGADOMES.addActionListener(this);
+           telaNota.jTextIdEMPREGADOPROD.addActionListener(this);
+           telaNota.telaNota.addActionListener(this);
+           
+           
        }
        if (e.getSource() == empRegistro.telaEmpregadoRegistroVoltar){
            e.setSource(null);

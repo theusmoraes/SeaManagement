@@ -58,6 +58,7 @@ public class TelaEmpregado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         telaEmpregadoSair = new javax.swing.JButton();
+        vendas12 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,6 +108,8 @@ public class TelaEmpregado extends javax.swing.JFrame {
 
         telaEmpregadoSair.setText("Sair");
 
+        vendas12.setText("VENDAS");
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -124,7 +127,9 @@ public class TelaEmpregado extends javax.swing.JFrame {
                                     .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jlabel2Layout.createSequentialGroup()
                                 .addGap(276, 276, 276)
-                                .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vendas12)
+                                    .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,7 +171,9 @@ public class TelaEmpregado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(telaEmpregadoSair)
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(telaEmpregadoSair)
+                    .addComponent(vendas12))
                 .addGap(608, 608, 608)
                 .addComponent(jLabel2)
                 .addGap(53, 53, 53)
@@ -249,5 +256,6 @@ public class TelaEmpregado extends javax.swing.JFrame {
     public javax.swing.JButton telaEmpregadoSair;
     public javax.swing.JLabel txtPerfil;
     public javax.swing.JLabel txtRegistro;
+    public javax.swing.JButton vendas12;
     // End of variables declaration//GEN-END:variables
 }
