@@ -7,9 +7,17 @@ public class HistoricoDeUso {
     private String horaFinal;
     private Maquina maquina;
     private Costureiro costureiro;
-    
+    private int id_produto;
     private  int id_maquina;
     private  int id_costureiro;
+
+    public int getId_produto() {
+        return id_produto;
+    }
+
+    public void setId_produto(int id_produto) {
+        this.id_produto = id_produto;
+    }
 
     public int getId_maquina() {
         return id_maquina;

@@ -60,7 +60,7 @@ public Tecido(){
 
     public void setVendido(float vendido) {
         this.vendido += vendido;
-        this.decrescentaTecido(vendido);
+        //this.decrescentaTecido(vendido);
     }
   
   

@@ -136,6 +136,8 @@ public class SeaManegement {
         JOptionPane.showMessageDialog(null,vamos);
      // System.out.println(vamos);
   */
+    
+     
     }
     
 }

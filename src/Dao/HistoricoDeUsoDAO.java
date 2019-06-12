@@ -46,6 +46,7 @@ public class HistoricoDeUsoDAO {
                 historico.setHoraFinal(rs.getString("horariofinal"));
                 historico.setId_maquina(rs.getInt("id_maquina"));
                 historico.setId_costureiro(rs.getInt("id_funcionario"));
+                historico.setId_produto(rs.getInt("id_produto"));
                 
              historicos.add(historico);
               
@@ -57,16 +58,17 @@ public class HistoricoDeUsoDAO {
         
     }
     
-    public void insereHistorico(String horarioinicial,String horariofinal, int id_maquina, int id_funcionario){
+    public void insereHistorico(String horarioinicial,String horariofinal, int id_maquina, int id_funcionario, int id_produto){
         String registro = null;
         try{
-            String sql= "INSERT INTO historicodeuso(horarioinicial,horariofinal,id_maquina,id_funcionario) VALUES (?,?,?,?)";
+            String sql= "INSERT INTO historicodeuso(horarioinicial,horariofinal,id_maquina,id_funcionario,id_produto) VALUES (?,?,?,?,?)";
             Connection con = conexao.getConnection();
             PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
             stmt.setString(1,horarioinicial);
             stmt.setString(2,horariofinal);
             stmt.setInt(3, id_maquina);
             stmt.setInt(4, id_funcionario);
+            stmt.setInt(5, id_produto);
             stmt.execute();
             stmt.close();
             con.close();
@@ -74,7 +76,7 @@ public class HistoricoDeUsoDAO {
             System.out.println("Erro: "+e.getMessage());
         }
     }
-     public void editarHistorico(int id ,String horarioinicial,String horariofinal, int id_maquina, int id_funcionario){
+     public void editarHistorico(int id ,String horarioinicial,String horariofinal, int id_maquina, int id_funcionario,int id_produto){
         try{
             String sql = "update historicodeuso set horarioinicial=? ,horariofinal =?,id_maquina =?,id_funcionario=? where idHistoricodeuso=?";
             Connection conexaobd = conexao.getConnection();
@@ -125,6 +127,7 @@ public class HistoricoDeUsoDAO {
                 historico.setHoraFinal(rs.getString("horariofinal"));
               historico.setId_maquina(rs.getInt("id_maquina"));
                 historico.setId_costureiro(rs.getInt("id_funcionario"));
+                historico.setId_produto(rs.getInt("id_produto"));
              historicos.add(historico);
               
            }

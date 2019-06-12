@@ -537,7 +537,13 @@ public class Controller implements ActionListener, KeyListener {
           String horarioFim = (empRegistro.txtHorarioFim.getText());
           int idMaquina = Integer.parseInt(empRegistro.txtIdMaquina.getText());
           int idUsuario = Integer.parseInt(empRegistro.txtID.getText());
-          historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario);
+          String idproduto = (String) empRegistro.jcProduto.getSelectedItem();
+          ProdutoDAO produtoDAO2 =new ProdutoDAO();
+          Produto produto2 = new Produto();
+          Nota2 nota2=new Nota2();
+          int idPro = produtoDAO2.SelecioneIdProduto(idproduto);
+          historicoDAO.insereHistorico(horarioIncio, horarioFim, idMaquina, idUsuario,idPro);
+          nota2.passandoprodutodecresenta(idPro);
           
           
        }

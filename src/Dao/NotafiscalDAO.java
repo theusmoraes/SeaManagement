@@ -188,5 +188,20 @@ public ArrayList<Notafiscal> listaNotafiscal(){
         } return notas;
         
     }
+     public void editarNotasasd(int id, int id_produto, int id_funcionario, String mes){
+        try{
+            String sql = "update notafiscal set id_produto=? ,id_funcionario =? ,mes=? where idnotafiscal=?";
+            Connection conexaobd = conexao.getConnection();
+            PreparedStatement ps = (PreparedStatement) conexaobd.prepareStatement(sql);
+            ps.setInt(1, id_produto);
+            ps.setInt(2,id_funcionario);
+            ps.setString(3,mes);
+            ps.setInt(4, id);
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println("Erro:"+e.getMessage());
+            
+        }
+    }
    
 }

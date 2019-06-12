@@ -8,6 +8,7 @@ package Model;
 import Dao.CostureiroDAO;
 import Dao.NotafiscalDAO;
 import Dao.ProdutoDAO;
+import Dao.TecidoDAO;
 import java.util.ArrayList;
 
 /**
@@ -83,5 +84,33 @@ public class Nota2 {
          
          
      }
+    public void passandoprodutodecresenta(int idproduto){
+        TecidoDAO tecidodao = new TecidoDAO();
+        Tecido tecido = new Tecido();
+        ProdutoDAO produtoDAO =new ProdutoDAO();
+        Notafiscal nota= new Notafiscal();
+        NotafiscalDAO notaDAO= new NotafiscalDAO();
+        Produto produto = new Produto();
+        Produto produto2 = new Produto();
+        Produto produto3 = new Produto();
+        produto=produtoDAO.SelecioneProdutopeloiD(idproduto);
+        tecido=tecidodao.SelecioneTecido(produto.getId_tecido());
+        tecido.decrescentaTecido(produto.getUsadaquant());
+        tecidodao.editarTecidoPassandoTecido(tecido);
+    }
+    public void passandoprodutovendido(int idproduto){
+        TecidoDAO tecidodao = new TecidoDAO();
+        Tecido tecido = new Tecido();
+        ProdutoDAO produtoDAO =new ProdutoDAO();
+        Notafiscal nota= new Notafiscal();
+        NotafiscalDAO notaDAO= new NotafiscalDAO();
+        Produto produto = new Produto();
+        Produto produto2 = new Produto();
+        Produto produto3 = new Produto();
+        produto=produtoDAO.SelecioneProdutopeloiD(idproduto);
+        tecido=tecidodao.SelecioneTecido(produto.getId_tecido());
+        tecido.setVendido(produto.getUsadaquant());
+        tecidodao.editarTecidoPassandoTecido(tecido);
+    }
     
 }
