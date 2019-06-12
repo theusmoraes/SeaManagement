@@ -26,6 +26,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.Dataset;
 /**
  *
  * @author Geral
@@ -101,10 +102,56 @@ public class Controller implements ActionListener, KeyListener {
         for (i=0;i<numTecidos;i++){
             box.addItem(tecidoDAO.listaTecido().get(i).getNome());
         }
-            
  
     }
- 
+      public void prencheGrafico (String produto, DefaultCategoryDataset dataset ){
+          int id_produto = produtoDAO.SelecioneIdProduto(produto);
+          ArrayList <Notafiscal> nota_produto = new ArrayList();
+          nota_produto = notafiscalDAO.NotasProduto(id_produto);
+          int tamanho_produto = nota_produto.size();
+          int i;
+          int janeiro = 0;
+          int fevereiro = 0;
+          int março = 0;
+          int abril = 0;
+          int maio = 0;
+          int junho = 0;
+          for (i = 0;i < tamanho_produto; i++) {
+              if (nota_produto.get(i).getMes().equals("janeiro")){
+                janeiro ++;
+              }else{
+                  
+                if (nota_produto.get(i).getMes().equals("fevereiro")){
+                  fevereiro ++;
+                }else{
+                   if (nota_produto.get(i).getMes().equals("março")){
+                       março ++;
+                   }else{
+                       if (nota_produto.get(i).getMes().equals("abril")){
+                           abril ++;
+                       }else{
+                           if (nota_produto.get(i).getMes().equals("maio")){
+                               maio ++;
+                           }else{
+                               if (nota_produto.get(i).getMes().equals("junho")){
+                                   junho ++;
+                               }
+                           }
+                       }
+                   }               
+
+                }
+              }
+
+          }
+            dataset.setValue(janeiro, "", "Janeiro");
+            dataset.setValue(fevereiro, "", "Fevereiro");
+            dataset.setValue(março,"", "Março");
+            dataset.setValue(abril,"", "Abril");
+            dataset.setValue(maio,"", "Maio");
+            dataset.setValue(junho,"", "Junho");
+      }
+
     @Override
     public void actionPerformed(ActionEvent e) {
        if (e.getSource() == login.brnEntrar){
@@ -153,26 +200,29 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastro.telaCadastraUsuario.addActionListener(this);
            e.setSource(null);
        }
+       
+       
+       
+       
         if (e.getSource() == tela.btnPerfil) {
             tela.setVisible(false);
-            dataset.setValue(50, "", "Janeiro");
-            dataset.setValue(60, "", "Fevereiro");
-            dataset.setValue(40, "", "Março");
-            dataset.setValue(90, "", "Abril");
-            /*JFreeChart chart = ChartFactory.createBarChart("", "", "", dataset, PlotOrientation.HORIZONTAL,false,false,false);
-            CategoryPlot catPlot = chart.getCategoryPlot();
-            catPlot.setRangeGridlinePaint(Color.BLACK);*/
+            prencheGrafico("casaco", dataset);
+            relatorio.btnAtualiza.addActionListener(this);
+            prencherListaProdutos(relatorio.jcProdutos);
+            relatorio.setVisible(true);
+            relatorio.telaRelatorio.addActionListener(this);
+
             
-            JFreeChart chart = ChartFactory.createLineChart("Teste grafico", "Mes", "Vendas", dataset,
+        }
+        if (e.getSource() == relatorio.btnAtualiza){
+            String produto = (String)relatorio.jcProdutos.getSelectedItem();
+            prencheGrafico(produto, dataset);
+            JFreeChart chart = ChartFactory.createLineChart("Vendas Mensais", "Mes", "Vendas", dataset,
                     PlotOrientation.VERTICAL, true,true,false);
             ChartPanel chartPanel = new ChartPanel(chart);
             relatorio.jGrafico.removeAll();
             relatorio.jGrafico.add(chartPanel,BorderLayout.CENTER);
             relatorio.jGrafico.validate();
-            relatorio.setVisible(true);
-            relatorio.telaRelatorio.addActionListener(this);
-
-            
         }
        
        if (e.getSource() == cadastro.btnCadastrar){
@@ -241,6 +291,7 @@ public class Controller implements ActionListener, KeyListener {
            e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
                prencherListaTecidos(cadastroR.jcTecidos);
+               cadastroR.tttRegistroTecido1.setText("Cadastra tecido");
                cadastroR.btnConfirmaOpcoes.setVisible(false);
                cadastroR.jcCadastros.setVisible(false);
                cadastroR.tttAdicionarTecidos.setVisible(true);
