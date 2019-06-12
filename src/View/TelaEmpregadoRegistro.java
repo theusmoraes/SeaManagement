@@ -45,6 +45,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         jcProduto = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
+        telaEmpregadoRegistroVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,7 +61,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 691, Short.MAX_VALUE)
+            .addGap(0, 707, Short.MAX_VALUE)
         );
 
         txtRegistro.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
@@ -111,6 +112,8 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel9.setText("Produto Fabricado");
 
+        telaEmpregadoRegistroVoltar.setText("voltar");
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -153,9 +156,13 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
                             .addGroup(jlabel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel13))
-                            .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(telaEmpregadoRegistroVoltar)
+                        .addGap(67, 67, 67))))
         );
         jlabel2Layout.setVerticalGroup(
             jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +189,9 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtHorarioFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jLabel9)
+                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(telaEmpregadoRegistroVoltar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(102, 102, 102)
@@ -281,6 +290,7 @@ public class TelaEmpregadoRegistro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     public javax.swing.JComboBox jcProduto;
     private javax.swing.JPanel jlabel2;
+    public javax.swing.JButton telaEmpregadoRegistroVoltar;
     public javax.swing.JTextField txHorarioInicio;
     public javax.swing.JTextField txtHorarioFim;
     public javax.swing.JTextField txtID;

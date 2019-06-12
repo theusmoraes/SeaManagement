@@ -51,6 +51,7 @@ public class Cadastro extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         btnAdicionar = new javax.swing.JButton();
         btnConfirmaOpcoes = new javax.swing.JButton();
+        telaVoltarCada = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,6 +158,9 @@ public class Cadastro extends javax.swing.JFrame {
         btnConfirmaOpcoes.setActionCommand("");
         jlabel6.add(btnConfirmaOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
 
+        telaVoltarCada.setText("Voltar");
+        jlabel6.add(telaVoltarCada, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -224,6 +228,7 @@ public class Cadastro extends javax.swing.JFrame {
     public javax.swing.JComboBox jcCadastros;
     public javax.swing.JComboBox jcTecidos;
     private javax.swing.JPanel jlabel6;
+    public javax.swing.JButton telaVoltarCada;
     public javax.swing.JLabel tttAdicionarTecidos;
     public javax.swing.JLabel tttNome;
     public javax.swing.JLabel tttQuantidadeComprado;

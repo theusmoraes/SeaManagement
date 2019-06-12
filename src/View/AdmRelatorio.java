@@ -28,23 +28,32 @@ public class AdmRelatorio extends javax.swing.JFrame {
     private void initComponents() {
 
         jGrafico = new javax.swing.JPanel();
+        telaRelatorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jGrafico.setBackground(new java.awt.Color(153, 153, 153));
         jGrafico.setLayout(new java.awt.BorderLayout());
 
+        telaRelatorio.setText("Voltar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jGrafico, javax.swing.GroupLayout.DEFAULT_SIZE, 986, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(telaRelatorio)
+                .addGap(92, 92, 92))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 127, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(telaRelatorio)
+                .addGap(0, 84, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,5 +96,6 @@ public class AdmRelatorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel jGrafico;
+    public javax.swing.JButton telaRelatorio;
     // End of variables declaration//GEN-END:variables
 }

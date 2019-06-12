@@ -73,6 +73,7 @@ public class TelaAdimin extends javax.swing.JFrame {
         txtHistorico = new javax.swing.JLabel();
         btnCadastroResto = new javax.swing.JButton();
         txtPerfil2 = new javax.swing.JLabel();
+        telaVoltarAdm = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -145,6 +146,8 @@ public class TelaAdimin extends javax.swing.JFrame {
         txtPerfil2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         txtPerfil2.setText("Cadastro");
 
+        telaVoltarAdm.setText("Voltar");
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -153,6 +156,8 @@ public class TelaAdimin extends javax.swing.JFrame {
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jlabel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(telaVoltarAdm)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jlabel2Layout.createSequentialGroup()
@@ -196,26 +201,32 @@ public class TelaAdimin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(48, 48, 48)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRegistro1)
-                            .addComponent(txtPerfil1)
-                            .addComponent(txtHistorico)
-                            .addComponent(txtPerfil2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jlabel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
                         .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jlabel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jlabel2Layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtRegistro1)
+                                    .addComponent(txtPerfil1)
+                                    .addComponent(txtHistorico)
+                                    .addComponent(txtPerfil2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCadastroResto, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(telaVoltarAdm)
+                                .addGap(127, 127, 127))))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,6 +315,7 @@ public class TelaAdimin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jlabel2;
     public javax.swing.JLabel pngRodinha;
+    public javax.swing.JButton telaVoltarAdm;
     public javax.swing.JLabel txtHistorico;
     public javax.swing.JLabel txtPerfil1;
     public javax.swing.JLabel txtPerfil2;

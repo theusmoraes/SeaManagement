@@ -57,6 +57,7 @@ public class TelaEmpregado extends javax.swing.JFrame {
         txtRegistro = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        telaEmpregadoSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +105,8 @@ public class TelaEmpregado extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
 
+        telaEmpregadoSair.setText("Sair");
+
         javax.swing.GroupLayout jlabel2Layout = new javax.swing.GroupLayout(jlabel2);
         jlabel2.setLayout(jlabel2Layout);
         jlabel2Layout.setHorizontalGroup(
@@ -111,10 +114,6 @@ public class TelaEmpregado extends javax.swing.JFrame {
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(136, 136, 136))
                     .addGroup(jlabel2Layout.createSequentialGroup()
                         .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jlabel2Layout.createSequentialGroup()
@@ -126,7 +125,16 @@ public class TelaEmpregado extends javax.swing.JFrame {
                             .addGroup(jlabel2Layout.createSequentialGroup()
                                 .addGap(276, 276, 276)
                                 .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(136, 136, 136))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jlabel2Layout.createSequentialGroup()
+                                .addComponent(telaEmpregadoSair)
+                                .addGap(72, 72, 72))))))
             .addGroup(jlabel2Layout.createSequentialGroup()
                 .addGap(682, 682, 682)
                 .addGroup(jlabel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +165,9 @@ public class TelaEmpregado extends javax.swing.JFrame {
                 .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(666, 666, 666)
+                .addGap(33, 33, 33)
+                .addComponent(telaEmpregadoSair)
+                .addGap(608, 608, 608)
                 .addComponent(jLabel2)
                 .addGap(53, 53, 53)
                 .addComponent(jLabel3))
@@ -236,6 +246,7 @@ public class TelaEmpregado extends javax.swing.JFrame {
     private javax.swing.JPanel jlabel2;
     public javax.swing.JLabel pngRodinha;
     public javax.swing.JLabel pngRodinha1;
+    public javax.swing.JButton telaEmpregadoSair;
     public javax.swing.JLabel txtPerfil;
     public javax.swing.JLabel txtRegistro;
     // End of variables declaration//GEN-END:variables

@@ -121,10 +121,12 @@ public class Controller implements ActionListener, KeyListener {
             this.tela.btnPerfil.addActionListener(this);
             this.tela.btnHistorico.addActionListener(this);
             this.tela.btnCadastroResto.addActionListener(this);
+            this.tela.telaVoltarAdm.addActionListener(this);
            }else{
                if (subCos != null){
                  empregadoBasico.btnPerfil.addActionListener(this);
                  empregadoBasico.btnRegistro.addActionListener(this);
+                 empregadoBasico.telaEmpregadoSair.addActionListener(this);
                  login.setVisible(false);
                  subCos.InsereNomePerfil(perfil, subCos);
                  empregadoBasico.setVisible(true);
@@ -146,6 +148,7 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastro.txtUser.addActionListener(this);
            this.cadastro.cxAdmin.addActionListener(this);
            this.cadastro.setVisible(true);
+           this.cadastro.telaCadastraUsuario.addActionListener(this);
            e.setSource(null);
        }
         if (e.getSource() == tela.btnPerfil) {
@@ -165,6 +168,7 @@ public class Controller implements ActionListener, KeyListener {
             relatorio.jGrafico.add(chartPanel,BorderLayout.CENTER);
             relatorio.jGrafico.validate();
             relatorio.setVisible(true);
+            relatorio.telaRelatorio.addActionListener(this);
 
             
         }
@@ -222,14 +226,15 @@ public class Controller implements ActionListener, KeyListener {
            this.cadastroR.txtQuantTecido.setVisible(false);
            this.cadastroR.txtSegundo.setVisible(false);
            this.cadastroR.txtTerceiro.setVisible(false);
+           this.cadastroR.telaVoltarCada.addActionListener(this);
             e.setSource(null);
 
        }
-        if (e.getSource() == tela.btnHistorico) {
+        /*if (e.getSource() == tela.btnHistorico) {
             tela.setVisible(false);
             his.setVisible(true);
             
-        }
+        }*/
        if (e.getSource() == cadastroR.btnConfirmaOpcoes ){
            e.setSource(null);
            if (cadastroR.jcCadastros.getSelectedItem().equals("Tecido")){
@@ -339,7 +344,8 @@ public class Controller implements ActionListener, KeyListener {
                         String tipoProduto = cadastroR.txtTerceiro.getText();
                         String tipoTecido = (String) cadastroR.jcTecidos.getSelectedItem();
                         int usadaquant = Integer.parseInt(cadastroR.txtQuantTecido.getText());
-                         int idProduto = produtoDAO.SelecioneIdProduto(nome);
+                         //int idProduto = produtoDAO.SelecioneIdProduto(nome);
+                         int idProduto = tecidoDAO.SelecioneTecidoNomeRetornaId(tipoTecido);
                         produtoDAO.insereProduto(nome, preco, tipoProduto, idProduto, usadaquant);
                         
 //                        produtoDAO.insereProduto(nome, preco, TipoProduto, id_tecido, usadaquant);
@@ -356,6 +362,7 @@ public class Controller implements ActionListener, KeyListener {
            his.setSize (900,660);
            this.his.jButtonHistoricodevendas.addActionListener(this);
            this.his.vendatop.addActionListener(this);
+           this.his.telaVoltarHistorico.addActionListener(this);
           
          
             e.setSource(null);
@@ -418,9 +425,18 @@ public class Controller implements ActionListener, KeyListener {
        if (e.getSource() == empregadoBasico.btnPerfil){
            e.setSource(null);
            System.out.println(perfil.nome);
+        
            empregadoBasico.setVisible(false);
            perfil.setVisible(true);
-     
+           perfil.telaPerfilVoltar.addActionListener(this);
+       }
+       if (e.getSource() == perfil.telaPerfilVoltar){
+           e.setSource(null);
+           
+            perfil.setVisible(false);
+           empregadoBasico.setVisible(true);
+           
+           
        }
        if (e.getSource() == empregadoBasico.btnRegistro){
            
@@ -432,8 +448,74 @@ public class Controller implements ActionListener, KeyListener {
            empRegistro.txtHorarioFim.addActionListener(this);
            empRegistro.txtIdMaquina.addActionListener(this);
            empRegistro.txtID.addActionListener(this);
+           
            empRegistro.setVisible(true);
+           empRegistro.telaEmpregadoRegistroVoltar.addActionListener(this);
+          
        }
+       if (e.getSource() == empRegistro.telaEmpregadoRegistroVoltar){
+           e.setSource(null);
+           
+            empRegistro.setVisible(false);
+           empregadoBasico.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == empregadoBasico.telaEmpregadoSair){
+           e.setSource(null);
+           
+            
+           empregadoBasico.setVisible(false);
+           login.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == cadastro.telaCadastraUsuario){
+           e.setSource(null);
+           
+            
+           cadastro.setVisible(false);
+           tela.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == cadastroR.telaVoltarCada){
+           e.setSource(null);
+           
+            
+           cadastroR.setVisible(false);
+           tela.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == his.telaVoltarHistorico){
+           e.setSource(null);
+           
+            
+           his.setVisible(false);
+           tela.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == tela.telaVoltarAdm){
+           e.setSource(null);
+           
+            
+           tela.setVisible(false);
+           login.setVisible(true);
+           
+           
+       }
+       if (e.getSource() == relatorio.telaRelatorio){
+           e.setSource(null);
+           
+            
+           relatorio.setVisible(false);
+           tela.setVisible(true);
+           
+           
+       }
+       
        if (e.getSource() == empRegistro.btnSalvar){
           String horarioIncio = empRegistro.txHorarioInicio.getText();
           String horarioFim = (empRegistro.txtHorarioFim.getText());

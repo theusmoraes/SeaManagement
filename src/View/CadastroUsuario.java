@@ -44,6 +44,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         passConfirma = new javax.swing.JPasswordField();
         btnCadastrar = new javax.swing.JButton();
         cxAdmin = new javax.swing.JCheckBox();
+        telaCadastraUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,6 +162,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
         cxAdmin.setText("O usuario será um administrador");
         jlabel5.add(cxAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 180, -1));
 
+        telaCadastraUsuario.setText("Voltar");
+        jlabel5.add(telaCadastraUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -255,6 +259,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jlabel5;
     public javax.swing.JPasswordField passConfirma;
     public javax.swing.JPasswordField passSenha;
+    public javax.swing.JButton telaCadastraUsuario;
     public javax.swing.JLabel tttCpf10;
     public javax.swing.JLabel tttCpf11;
     public javax.swing.JLabel tttCpf9;
